@@ -15,7 +15,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons01} alt="cons01" />
+          <img style={{ width: "400px" }} src={cons01} alt="cons01" />
         </div>
       </Post>
 
@@ -25,7 +25,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons02} alt="cons02" />
+          <img style={{ width: "400px" }} src={cons02} alt="cons02" />
         </div>
       </Post>
       <Post
@@ -34,7 +34,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons03} alt="cons03" />
+          <img style={{ width: "400px" }} src={cons03} alt="cons03" />
         </div>
       </Post>
       <Post
@@ -43,7 +43,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons04} alt="cons04" />
+          <img style={{ width: "400px" }} src={cons04} alt="cons04" />
         </div>
       </Post>
       <Post
@@ -52,7 +52,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons05} alt="cons05" />
+          <img style={{ width: "400px" }} src={cons05} alt="cons05" />
         </div>
       </Post>
       <Post
@@ -61,7 +61,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons06} alt="cons06" />
+          <img style={{ width: "400px" }} src={cons06} alt="cons06" />
         </div>
       </Post>
     </div>
