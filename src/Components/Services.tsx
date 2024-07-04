@@ -1,4 +1,9 @@
 import cons01 from "../assets/cons01.jpg";
+import cons02 from "../assets/cons02.jpg";
+import cons03 from "../assets/cons03.jpg";
+import cons04 from "../assets/cons04.jpg";
+import cons05 from "../assets/cons05.jpg";
+import cons06 from "../assets/cons06.jpg";
 import Post from "./Post";
 
 const Services = () => {
@@ -20,7 +25,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons01} alt="cons01" />
+          <img src={cons02} alt="cons02" />
         </div>
       </Post>
       <Post
@@ -29,7 +34,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons01} alt="cons01" />
+          <img src={cons03} alt="cons03" />
         </div>
       </Post>
       <Post
@@ -38,7 +43,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons01} alt="cons01" />
+          <img src={cons04} alt="cons04" />
         </div>
       </Post>
       <Post
@@ -47,7 +52,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons01} alt="cons01" />
+          <img src={cons05} alt="cons05" />
         </div>
       </Post>
       <Post
@@ -56,7 +61,7 @@ const Services = () => {
         ipsum."
       >
         <div>
-          <img src={cons01} alt="cons01" />
+          <img src={cons06} alt="cons06" />
         </div>
       </Post>
     </div>
