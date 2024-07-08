@@ -1,13 +1,19 @@
-// import cons01 from "../assets/cons01.jpg";
+import React from 'react';
 
-function Post({ postName = "-", postBody = "-", children }) {
+interface PostProps {
+  postName: string;
+  postBody: string;
+  c: React.ReactNode; // تعديل النوع هنا
+}
+
+const Post: React.FC<PostProps> = ({ postName, postBody, c }) => {
   return (
     <div>
-      {children}
+      {c}
       <h1>{postName}</h1>
       <p>{postBody}</p>
     </div>
   );
-}
+};
 
 export default Post;
