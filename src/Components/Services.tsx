@@ -55,10 +55,10 @@ const Services = () => {
 
   return (
     <Container sx={{ py: 8 }}>
-      <Typography variant="h3" align="left" gutterBottom>
+      <Typography variant="h4" align="left" gutterBottom>
         Build Your Dream
       </Typography>
-      <Typography variant="h2" align="left" gutterBottom>
+      <Typography variant="h3" align="left" gutterBottom>
         Quality Services
       </Typography>
       <Grid container spacing={3} justifyContent="center">
@@ -93,5 +93,5 @@ const Services = () => {
     </Container>
   );
 };
-  
+
 export default Services;

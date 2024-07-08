@@ -8,7 +8,7 @@ const Hero = () => {
         display: 'flex',
         flexDirection: 'column',
         borderBottom: '2px solid #333',
-        padding: '2rem',
+        padding: '2.5rem',
         backgroundImage: `linear-gradient(rgba(0, 0, 1, 0.7), rgba(0, 0, 0, 0.7)), url(${backgroundImage})`, // Combine gradient and image
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -20,7 +20,7 @@ const Hero = () => {
         <Typography
           variant="h1"
           style={{
-            fontSize: '3.5rem', // Adjusted font size
+            fontSize: '2rem', // Adjusted font size
             fontWeight: 'bold',
             color: '#FFD700',
             marginBottom: '1rem',
@@ -68,7 +68,7 @@ const Hero = () => {
             color: '#FFF',
             border: '2px solid #FFF',
             '&:hover': {
-              bgcolor: '#FFF',
+              bgcolor: '#FFD700',
               color: '#000',
               border: '2px solid #000',
             },
