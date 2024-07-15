@@ -13,7 +13,7 @@ import service04 from "../assets/service04.jpg";
 import service05 from "../assets/service05.jpg";
 import service06 from "../assets/service06.jpg";
 
-const Services = () => {
+const AllServices = () => {
   const services = [
     {
       id: 1,
@@ -94,4 +94,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default AllServices;

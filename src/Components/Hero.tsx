@@ -68,7 +68,7 @@ const Hero = () => {
             color: '#FFF',
             border: '2px solid #FFF',
             '&:hover': {
-              bgcolor: '#FFD700',
+              bgcolor: '#FFEA00',
               color: '#000',
               border: '2px solid #000',
             },
