@@ -1,7 +1,7 @@
 // src/pages/Projects.jsx
 import NewCard from "./NewCard";
 
-const Projects = () => {
+const AllProjects = () => {
   return (
     <div>
       <NewCard />
@@ -14,4 +14,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default AllProjects;

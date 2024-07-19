@@ -1,3 +1,70 @@
 body {
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-size: cover;
+}
+
+.container {
+  padding-top: 40px; /* Adjust based on the height of your AppBar */
+}
+
+.hero {
+  position: relative;
+  background: url("/src/assets/cover.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh; /* Adjust based on your design */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align to the left */
+  /* color: #fff; */
+  padding-top: 20px; /* Adjust based on the height of your AppBar */
+}
+
+.hero-content {
+  position: relative;
+  /* max-width: 600px; Optional: Adjust the max width based on your design */
+}
+
+.hero-content h1,
+.hero-content h2,
+.hero-content p {
+  text-align: left; /* Align text to the left */
+}
+
+.heroAll {
+  position: relative;
+  background: url("/src/assets/cons04.jpg") no-repeat center center;
+  background-size: cover;
+  height: 60vh; /* اجعل الخلفية أقصر عن طريق تقليل الارتفاع */
+  display: flex;
+  align-items: center; /* لمحاذاة المحتوى عمودياً */
+  justify-content: center; /* لمحاذاة المحتوى أفقياً */
+}
+
+
+.heroAll::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* زيادة التعتيم لجعل الخلفية أكثر إغمقاقاً */
+  z-index: 1;
+}
+
+.heroAll-content {
+  position: relative;
+  z-index: 2;
+  text-align: center; /* محاذاة النص إلى الوسط */
+  color: #fff;
+}
+
+.heroAll-text {
+  font-size: 4rem; /* زيادة حجم النص */
+  font-weight: bold;
+  color: #fff; /* جعل النص أبيض */
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

@@ -55,10 +55,10 @@ const AllServices = () => {
 
   return (
     <Container sx={{ py: 8 }}>
-      <Typography variant="h4" align="left" gutterBottom>
+      <Typography variant="h4" align="left" gutterBottom sx={{ color: '#232837' }}>
         Build Your Dream
       </Typography>
-      <Typography variant="h3" align="left" gutterBottom>
+      <Typography variant="h3" align="left" gutterBottom sx={{ color: '#232837' , fontWeight: 'bold' }}>
         Quality Services
       </Typography>
       <Grid container spacing={3} justifyContent="center">

@@ -1,13 +1,13 @@
 import Footer from "../../Components/Footer";
+import HeroAll from "../../Components/HeroAll"
 
 const About = () => {
   return (
     <>
-     About us
-     <Footer />
-
+      <HeroAll text="About" />
+      <Footer />
     </>
   );
-}
+};
 
 export default About;
