@@ -2,8 +2,8 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
-import { Facebook, Instagram, Twitter } from "@mui/icons-material";
-import { Box } from "@mui/material";
+import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material"; // Added YouTube import
+import { Box } from "@mui/material"; // Added IconButton import
 
 export default function Footer() {
   return (
@@ -24,8 +24,8 @@ export default function Footer() {
               About Us
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              We are Armadia company, dedicated to providing the best service to our
-              customers.
+              We are Armadia company, dedicated to providing the best service to
+              our customers.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -46,19 +46,64 @@ export default function Footer() {
             <Typography variant="h6" color="text.primary" gutterBottom>
               Follow Us
             </Typography>
-            <Link href="https://www.facebook.com/" color="inherit">
-              <Facebook />
-            </Link>
-            <Link
-              href="https://www.instagram.com/"
-              color="inherit"
-              sx={{ pl: 1, pr: 1 }}
-            >
-              <Instagram />
-            </Link>
-            <Link href="https://www.twitter.com/" color="inherit">
-              <Twitter />
-            </Link>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Link
+                href="https://www.facebook.com/"
+                color="inherit"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  // mx: 1, // Margin between icons
+                  '&:hover svg': {
+                    color: '#FFD700', // Yellow color on hover
+                  },
+                }}
+              >
+                <Facebook sx={{ color: '#000' }} /> {/* Black color by default */}
+              </Link>
+              <Link
+                href="https://www.instagram.com/"
+                color="inherit"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  // mx: 1, // Margin between icons
+                  '&:hover svg': {
+                    color: '#FFD700', // Yellow color on hover
+                  },
+                }}
+              >
+                <Instagram sx={{ color: '#000' }} /> {/* Black color by default */}
+              </Link>
+              <Link
+                href="https://www.twitter.com/"
+                color="inherit"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  // mx: 1, // Margin between icons
+                  '&:hover svg': {
+                    color: '#FFD700', // Yellow color on hover
+                  },
+                }}
+              >
+                <Twitter sx={{ color: '#000' }} /> {/* Black color by default */}
+              </Link>
+              <Link
+                href="https://www.youtube.com/"
+                color="inherit"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  // mx: 0, // Margin between icons
+                  '&:hover svg': {
+                    color: '#FFD700', // Yellow color on hover
+                  },
+                }}
+              >
+                <YouTube sx={{ color: '#000' }} /> {/* Black color by default */}
+              </Link>
+            </Box>
           </Grid>
         </Grid>
         <Box mt={5}>
@@ -70,7 +115,6 @@ export default function Footer() {
             {new Date().getFullYear()}
             {"."}
             <p>MuhammetShawky</p>
-
           </Typography>
         </Box>
       </Container>

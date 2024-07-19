@@ -5,38 +5,31 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
+import AdbIcon from "@mui/icons-material/Adb";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Link, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import { Link, useLocation } from "react-router-dom";
 
 const pages = ["Home", "Services", "Projects", "About", "Contact Us"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   const location = useLocation(); // Get current route
   const currentPath = location.pathname;
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -68,7 +61,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -92,6 +85,12 @@ function ResponsiveAppBar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: "block", md: "none" },
+                "& .MuiMenuItem-root": {
+                  "&:hover": {
+                    backgroundColor: "#FFD700",
+                    color: "#000",
+                  },
+                },
               }}
             >
               {pages.map((page) => (
@@ -148,34 +147,47 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+            <Tooltip title="Facebook">
+              <IconButton
+                href="https://www.facebook.com" // Replace with your Facebook link
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ p: 0, mx: 1 }} // Added margin
+              >
+                <FacebookIcon sx={{ color: '#fff', "&:hover": { color: '#FFD700' } }} />
               </IconButton>
             </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            <Tooltip title="Instagram">
+              <IconButton
+                href="https://www.instagram.com" // Replace with your Instagram link
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ p: 0, mx: 1 }} // Added margin
+              >
+                <InstagramIcon sx={{ color: '#fff', "&:hover": { color: '#FFD700' } }} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Twitter">
+              <IconButton
+                href="https://www.twitter.com" // Replace with your Twitter link
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ p: 0, mx: 1 }} // Added margin
+              >
+                <TwitterIcon sx={{ color: '#fff', "&:hover": { color: '#FFD700' } }} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="YouTube">
+              <IconButton
+                href="https://www.youtube.com" // Replace with your YouTube link
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ p: 0, mx: 1 }} // Added margin
+              >
+                <YouTubeIcon sx={{ color: '#fff', "&:hover": { color: '#FFD700' } }} />
+              </IconButton>
+            </Tooltip>
           </Box>
         </Toolbar>
       </Container>

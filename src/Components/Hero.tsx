@@ -5,8 +5,14 @@ const Hero = () => {
   return (
     <div className="hero">
       <Container className="hero-content">
-        <div style={{ display: "flex", flexDirection: "column", color: "#fff" }}>
-          <div style={{ paddingTop: "2rem" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            color: "#fff",
+          }}
+        >
+          <div style={{ paddingTop: "4rem" }}>
             <Typography
               variant="h1"
               style={{
