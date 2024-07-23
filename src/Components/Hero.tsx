@@ -1,7 +1,14 @@
 import { Typography, Button, Container } from "@mui/material";
-import "../index.css"; 
+import "../index.css";
+import { useNavigate } from "react-router-dom"; // استيراد useNavigate
 
 const Hero = () => {
+  const navigate = useNavigate(); // إنشاء دالة التوجيه
+
+  const handleButtonClick = () => {
+    navigate("/services"); // التوجيه إلى المسار المحدد
+  };
+
   return (
     <div className="hero">
       <Container className="hero-content">
@@ -45,18 +52,24 @@ const Hero = () => {
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+            porttitor accumsan tincidunt. Donec rutrum congue leo eget
+            malesuada. Nulla porttitor accumsan tincidunt. Donec rutrum congue
+            leo eget malesuada. Curabitur arcu erat, accumsan id imperdiet et,
+            porttitor at sem.
           </Typography>
           <div style={{ display: "flex", gap: "1.5rem", paddingTop: "2rem" }}>
             <Button
               variant="contained"
               sx={{
-                bgcolor: "#FFD700",
+                bgcolor: "#FFC107",
                 color: "#000",
                 "&:hover": {
                   bgcolor: "#FFEA00",
                 },
+                
               }}
+              onClick={handleButtonClick}
             >
               Our Services
             </Button>

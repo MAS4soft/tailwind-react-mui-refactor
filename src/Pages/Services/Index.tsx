@@ -6,7 +6,6 @@ const Services = () => {
   return (
     <div>
       <HeroAll text="Services" />
-
       <AllServices />
       <Footer />
     </div>

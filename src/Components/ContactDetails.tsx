@@ -16,9 +16,9 @@ const ContactDetails = () => {
           South Africa Office
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Address: 75 Tower Court Kernersville, NC 27284 PO Box 6658 
+          Address: 4 Mountain View Rd, Bloemhof, Cape Town, 7530 
           <br />
-          Tiger Valley , cape town
+          Tiger Valley , Cape Town
         </Typography>
         <br />
         <Typography variant="body1" gutterBottom>

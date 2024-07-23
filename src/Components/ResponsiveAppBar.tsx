@@ -33,9 +33,17 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar
+    <AppBar 
       position="fixed"
-      sx={{ backgroundColor: "rgba(0, 0, 0, 0.5)", boxShadow: "none" }}
+      sx={{ 
+        backgroundColor: "rgba(0, 0, 0, 0.5)", 
+        boxShadow: "none", 
+        py: .5,  // Added vertical padding 
+        // px: {
+        //   // xs: 2,  // بادينج أصغر للشاشات الصغيرة
+        //   md: 18, // بادينج أكبر للشاشات الكبيرة
+        // }
+      }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
