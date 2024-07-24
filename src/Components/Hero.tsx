@@ -19,7 +19,7 @@ const Hero = () => {
             color: "#fff",
           }}
         >
-          <div style={{ paddingTop: "8rem" }}> {/* اضبط المسافة هنا إذا لزم الأمر */}
+          <div style={{ paddingTop: "4rem" }}> {/* اضبط المسافة هنا إذا لزم الأمر */}
             <Typography
               variant="h1"
               style={{

@@ -13,12 +13,14 @@ body {
   position: relative;
   background: url("/src/assets/cover.jpg") no-repeat center center;
   background-size: cover;
-  height: 100vh; /* Full viewport height */
+  height: 150vh; /* Increase the height to cover more of the following section */
   display: flex;
   align-items: center;
   justify-content: flex-start; /* Align to the left */
   padding-top: 20px; /* Adjust based on the height of your AppBar */
+  margin-top: -8rem; /* Adjust if necessary to position SuccessStats */
 }
+
 
 .hero-content {
   position: relative;

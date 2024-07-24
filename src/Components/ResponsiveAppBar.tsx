@@ -8,16 +8,25 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import AdbIcon from "@mui/icons-material/Adb";
+import { Link, useLocation } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import { Link, useLocation } from "react-router-dom";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+import { styled } from '@mui/material/styles';
 
 const pages = ["Home", "Services", "Projects", "About", "Contact Us"];
+
+// Styled component for the logo image
+const Logo = styled('img')(({ theme }) => ({
+  height: 40, // Adjust the height as needed
+  display: 'block',
+  [theme.breakpoints.down('md')]: {
+    height: 30, // Adjust for smaller screens if needed
+  }
+}));
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -38,31 +47,60 @@ function ResponsiveAppBar() {
       sx={{        
         backgroundColor: "rgba(0, 0, 0, 0.5)", 
         boxShadow: "none", 
-        py: .5,  
+        py: .5,
+        top: 0, // Ensure it is fixed at the top
+        left: 0, // Ensure it spans full width
+        right: 0, // Ensure it spans full width
       }}
     >
-      <Container >
+      <Container>
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+          {/* Logo and company name for larger screens */}
+          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: 'center' }}>
+            <Logo
+              src="https://img.freepik.com/free-vector/flat-design-construction-company-logo_23-2150051906.jpg"
+              alt="Company Logo"
+              sx={{ mr: 1 }}
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="#"
+              sx={{
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              ARMADIA
+            </Typography>
+          </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          {/* Logo and menu button for smaller screens */}
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, alignItems: 'center' }}>
+            <Logo
+              src="https://img.freepik.com/free-vector/flat-design-construction-company-logo_23-2150051906.jpg"
+              alt="Company Logo"
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="#"
+              sx={{
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+                ml: 2, // Space between logo and text
+              }}
+            >
+              ARMADIA
+            </Typography>
             <IconButton
               size="large"
               aria-label="menu"
@@ -70,6 +108,7 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{ ml: 'auto' }}
             >
               <MenuIcon />
             </IconButton>
@@ -78,12 +117,12 @@ function ResponsiveAppBar() {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
-                horizontal: "left",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "left",
+                horizontal: "right",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
@@ -111,25 +150,8 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+
+          {/* Buttons for larger screens */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -151,7 +173,8 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+          {/* Social Media Icons */}
+          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
             <Tooltip title="Facebook">
               <IconButton
                 href="https://www.facebook.com" // Replace with your Facebook link

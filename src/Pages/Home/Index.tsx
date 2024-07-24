@@ -12,9 +12,9 @@ const Home = () => {
       <Box
         sx={{
           position: "relative",
-          top: "-6rem", // Adjust as needed to position SuccessStats
+          top: "-14rem", // Adjust as needed to position SuccessStats
           zIndex: 2, // Ensure it appears above Hero
-          marginBottom: "2rem", // Space below SuccessStats
+          marginBottom: "-12rem", // Space below SuccessStats
         }}
       >
         <SuccessStats />
