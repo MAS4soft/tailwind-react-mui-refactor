@@ -2,15 +2,24 @@ import AllServices from "../../Components/AllServices";
 import Footer from "../../Components/Footer";
 import Hero from "../../Components/Hero";
 import OurTeam from "../../Components/OurTeam";
-
-// import AboutInfo from "../../Components/AboutInfo";
+import SuccessStats from "../../Components/SuccessStats";
+import { Box } from "@mui/material"; // تأكد من استيراد Box
 
 const Home = () => {
   return (
     <div>
       <Hero />
+      <Box
+        sx={{
+          position: "relative",
+          top: "-6rem", // Adjust as needed to position SuccessStats
+          zIndex: 2, // Ensure it appears above Hero
+          marginBottom: "2rem", // Space below SuccessStats
+        }}
+      >
+        <SuccessStats />
+      </Box>
       <AllServices />
-      {/* <AboutInfo /> */}
       <OurTeam />
       <Footer />
     </div>

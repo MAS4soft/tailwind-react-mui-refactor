@@ -35,17 +35,13 @@ function ResponsiveAppBar() {
   return (
     <AppBar 
       position="fixed"
-      sx={{ 
+      sx={{        
         backgroundColor: "rgba(0, 0, 0, 0.5)", 
         boxShadow: "none", 
-        py: .5,  // Added vertical padding 
-        // px: {
-        //   // xs: 2,  // بادينج أصغر للشاشات الصغيرة
-        //   md: 18, // بادينج أكبر للشاشات الكبيرة
-        // }
+        py: .5,  
       }}
     >
-      <Container maxWidth="xl">
+      <Container >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography

@@ -1,12 +1,12 @@
 import { Typography, Button, Container } from "@mui/material";
 import "../index.css";
-import { useNavigate } from "react-router-dom"; // استيراد useNavigate
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-  const navigate = useNavigate(); // إنشاء دالة التوجيه
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/services"); // التوجيه إلى المسار المحدد
+    navigate("/services");
   };
 
   return (
@@ -19,7 +19,7 @@ const Hero = () => {
             color: "#fff",
           }}
         >
-          <div style={{ paddingTop: "4rem" }}>
+          <div style={{ paddingTop: "8rem" }}> {/* اضبط المسافة هنا إذا لزم الأمر */}
             <Typography
               variant="h1"
               style={{
