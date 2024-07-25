@@ -13,7 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "@mui/icons-material": "^5.15.20",
+    "@mui/icons-material": "^5.16.5",
     "@mui/material": "^5.16.4",
     "formfusion": "^1.1.12",
     "formik": "^2.4.6",

@@ -1,3 +1,5 @@
+
+
 import { Box, Typography, Grid, Avatar } from '@mui/material';
 
 const teamMembers = [
@@ -23,7 +25,7 @@ const teamMembers = [
 
 const    OurTeam: React.FC = () => {
   return (
-    <Box sx={{ mt: 6 }}>
+    <Box sx={{ mt: 6 , px: 24 }}>
       <Typography variant="h4" align="center" gutterBottom>
         Our Team
       </Typography>
