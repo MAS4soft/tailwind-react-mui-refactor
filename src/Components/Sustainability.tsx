@@ -1,27 +1,36 @@
-// src/HeroSection.tsx
 import React from 'react';
 import { Box, Button, Typography, Grid, useTheme } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ComputerIcon from '@mui/icons-material/Computer';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import { useNavigate } from "react-router-dom";
+
 
 const Sustainability: React.FC = () => {
-  const theme = useTheme();
+  const theme = useTheme()
+
+  const navigate = useNavigate();
+
+  const handleContactButtonClick = () => {
+    navigate("/ContactUs");
+  };
 
   return (
-    <Box sx={{ display: 'flex', height: '100vh' }}>
+    <Box sx={{ display: 'flex', minHeight: '80vh', paddingY: theme.spacing(4) }}>
       <Grid container>
         <Grid item xs={12} md={6} sx={{ 
           position: 'relative', 
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(src/assets/cons06.jpg)', 
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(src/assets/cons06.jpg)', 
           backgroundSize: 'cover', 
           backgroundPosition: 'center', 
           padding: theme.spacing(4), 
-          color: 'white' 
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center'
         }}>
-          <Box sx={{ padding: theme.spacing(4) }}>
-            <Typography variant="h6" color="yellow">
+          <Box sx={{ padding: theme.spacing(4, 6) }}>
+            <Typography variant="h4" color="#FFC107">
               Sustainability
             </Typography>
             <Typography variant="h3" sx={{ fontWeight: 'bold', marginBottom: theme.spacing(2) }}>
@@ -30,16 +39,34 @@ const Sustainability: React.FC = () => {
             <Typography variant="body1" sx={{ marginBottom: theme.spacing(4) }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus.
             </Typography>
-            <Button variant="contained" sx={{ backgroundColor: '#FFC107', color: 'black' }}>
+            <Button
+              variant="outlined"
+              sx={{
+                bgcolor: "transparent",
+                color: "#FFF",
+                border: "2px solid #FFF",
+                fontSize: "1.2rem",
+                padding: "0.75rem 1.5rem",
+                borderRadius: "0",
+                "&:hover": {
+                  bgcolor: "#FFEA00",
+                  color: "#000",
+                  border: "2px solid #000",
+                },
+              }}
+              onClick={handleContactButtonClick}
+            >
               GET IN TOUCH
             </Button>
           </Box>
         </Grid>
         <Grid item xs={12} md={6} sx={{ 
-          backgroundColor: 'rgba(255, 193, 7, 0.9)', 
-          padding: theme.spacing(4) 
+          backgroundImage: 'linear-gradient( rgba(255, 193, 7, 0.9), rgba(255, 193, 7, 0.9)), url(src/assets/cons06.jpg)', 
+          padding: theme.spacing(4),
+          display: 'flex',
+          alignItems: 'center'
         }}>
-          <Box sx={{ padding: theme.spacing(4) }}>
+          <Box sx={{ padding: theme.spacing(4, 6) }}>
             <Typography variant="h4" sx={{ fontWeight: 'bold', marginBottom: theme.spacing(2) }}>
               We Follow Best Practices
             </Typography>

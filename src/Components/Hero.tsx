@@ -5,8 +5,12 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
 
-  const handleButtonClick = () => {
+  const handleServicesButtonClick = () => {
     navigate("/services");
+  };
+
+  const handleContactButtonClick = () => {
+    navigate("/ContactUs");
   };
 
   return (
@@ -19,7 +23,7 @@ const Hero = () => {
             color: "#fff",
           }}
         >
-          <div style={{ paddingTop: "4rem" }}> {/* اضبط المسافة هنا إذا لزم الأمر */}
+          <div style={{ paddingTop: "4rem" }}>
             <Typography
               variant="h1"
               style={{
@@ -64,12 +68,14 @@ const Hero = () => {
               sx={{
                 bgcolor: "#FFC107",
                 color: "#000",
+                fontSize: "1.2rem",
+                padding: "0.75rem 1.5rem",
+                borderRadius: "0",
                 "&:hover": {
                   bgcolor: "#FFEA00",
                 },
-                
               }}
-              onClick={handleButtonClick}
+              onClick={handleServicesButtonClick}
             >
               Our Services
             </Button>
@@ -79,12 +85,16 @@ const Hero = () => {
                 bgcolor: "transparent",
                 color: "#FFF",
                 border: "2px solid #FFF",
+                fontSize: "1.2rem",
+                padding: "0.75rem 1.5rem",
+                borderRadius: "0",
                 "&:hover": {
                   bgcolor: "#FFEA00",
                   color: "#000",
                   border: "2px solid #000",
                 },
               }}
+              onClick={handleContactButtonClick}
             >
               Contact Us
             </Button>

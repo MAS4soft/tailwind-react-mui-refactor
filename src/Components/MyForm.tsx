@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import emailjs from "@emailjs/browser";
 
 const MyForm = () => {
@@ -23,19 +24,79 @@ const MyForm = () => {
   };
 
   return (
-    <>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" required />
-        <label>Email</label>
-        <input type="email" name="user_email" required />
-        <label>Phone</label>
-        <input type="text" name="user_phone" required />
-        <label>Message</label>
-        <textarea name="message" required />
-        <input type="submit" value="Send" />
-      </form>
-    </>
+    <Box
+      component="form"
+      ref={form}
+      onSubmit={sendEmail}
+      sx={{
+        maxWidth: 400,
+        margin: "0 auto",
+        padding: 2,
+        backgroundColor: "#1a2b44",
+        borderRadius: 1,
+        boxShadow: 1
+      }}
+    >
+      <Typography variant="h4" component="h1" color="white" gutterBottom>
+        Request a Quote
+      </Typography>
+      <Typography variant="body1" color="white" gutterBottom>
+        Ready to Work Together? Build a project with us!
+      </Typography>
+      <TextField
+        fullWidth
+        variant="outlined"
+        label="Name"
+        name="user_name"
+        required
+        margin="normal"
+        sx={{ backgroundColor: "white" }}
+      />
+      <TextField
+        fullWidth
+        variant="outlined"
+        label="Email"
+        name="user_email"
+        required
+        margin="normal"
+        sx={{ backgroundColor: "white" }}
+      />
+      <TextField
+        fullWidth
+        variant="outlined"
+        label="Subject"
+        name="user_subject"
+        required
+        margin="normal"
+        sx={{ backgroundColor: "white" }}
+      />
+      <TextField
+        fullWidth
+        variant="outlined"
+        label="Message"
+        name="message"
+        required
+        margin="normal"
+        multiline
+        rows={4}
+        sx={{ backgroundColor: "white" }}
+      />
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        fullWidth
+        sx={{
+          marginTop: 2,
+          backgroundColor: "#ffc107",
+          "&:hover": {
+            backgroundColor: "#e0a800"
+          }
+        }}
+      >
+        Send Message
+      </Button>
+    </Box>
   );
 };
 
