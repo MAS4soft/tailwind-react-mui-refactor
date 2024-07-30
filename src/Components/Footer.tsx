@@ -157,15 +157,17 @@ export default function Footer() {
             {new Date().getFullYear()}
             {"."}
             {/* <br /> */}
-            <Link
-              color="inherit"
-              href="https://www.facebook.com/MuhammetShawky/"
-              sx={{
-                mx: 10, // Margin between icons
-              }}
-            >
-              By. Muhammet Shawky
-            </Link>{" "}
+            
+              
+              <Link
+                color="inherit"
+                href="https://www.facebook.com/MuhammetShawky/"
+                sx={{
+                  mx: 10, // Margin between icons
+                }}
+              >
+                By.Muhammet Shawky
+              </Link>{" "}
           </Typography>
         </Box>
       </Container>
