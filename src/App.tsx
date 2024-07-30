@@ -5,11 +5,13 @@ import Projects from "./Pages/Projects/Index";
 import About from "./Pages/About/Index";
 import ContactUs from "./Pages/ContactUs/Index";
 import ResponsiveAppBar from "./Components/ResponsiveAppBar";
+import ScrollToTop from "./Components/ScrollToTop"; // تأكد من المسار الصحيح
 
 const App = () => {
   return (
     <>
       <ResponsiveAppBar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />

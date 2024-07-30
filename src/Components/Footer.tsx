@@ -2,8 +2,8 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
-import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material"; // Added YouTube import
-import { Box } from "@mui/material"; // Added IconButton import
+import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
+import { Box } from "@mui/material";
 
 export default function Footer() {
   return (
@@ -15,7 +15,7 @@ export default function Footer() {
             ? theme.palette.grey[200]
             : theme.palette.grey[800],
         p: 6,
-        mt: 10, // إضافة مسافة في الأعلى
+        mt: 10,
       }}
     >
       <Container maxWidth="lg">
@@ -72,78 +72,74 @@ export default function Footer() {
               <Link
                 href="https://www.facebook.com/"
                 color="inherit"
+                target="_blank" // Add this line
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  mx: 2, // Margin between icons
+                  mx: 2,
                   "&:hover svg": {
-                    color: "#FFC107", // Yellow color on hover
+                    color: "#FFC107",
                   },
                   "@media (max-width: 960px)": {
-                    // Target small screens
-                    mx: 0, // Remove margin
+                    mx: 0,
                   },
                 }}
               >
-                <Facebook sx={{ color: "white" }} />{" "}
-                {/* Black color by default */}
+                <Facebook sx={{ color: "white" }} />
               </Link>
               <Link
                 href="https://www.instagram.com/"
                 color="inherit"
+                target="_blank" // Add this line
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  mx: 2, // Margin between icons
+                  mx: 2,
                   "&:hover svg": {
-                    color: "#FFC107", // Yellow color on hover
+                    color: "#FFC107",
                   },
                   "@media (max-width: 960px)": {
-                    // Target small screens
-                    mx: 0, // Remove margin
+                    mx: 0,
                   },
                 }}
               >
-                <Instagram sx={{ color: "white" }} />{" "}
-                {/* Black color by default */}
+                <Instagram sx={{ color: "white" }} />
               </Link>
               <Link
                 href="https://www.twitter.com/"
                 color="inherit"
+                target="_blank" // Add this line
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  mx: 2, // Margin between icons
+                  mx: 2,
                   "&:hover svg": {
-                    color: "#FFC107", // Yellow color on hover
+                    color: "#FFC107",
                   },
                   "@media (max-width: 960px)": {
-                    // Target small screens
-                    mx: 0, // Remove margin
+                    mx: 0,
                   },
                 }}
               >
-                <Twitter sx={{ color: "white" }} />{" "}
-                {/* Black color by default */}
+                <Twitter sx={{ color: "white" }} />
               </Link>
               <Link
                 href="https://www.youtube.com/"
                 color="inherit"
+                target="_blank" // Add this line
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  mx: 2, // Margin between icons
+                  mx: 2,
                   "&:hover svg": {
-                    color: "#FFC107", // Yellow color on hover
+                    color: "#FFC107",
                   },
                   "@media (max-width: 960px)": {
-                    // Target small screens
-                    mx: 0, // Remove margin
+                    mx: 0,
                   },
                 }}
               >
-                <YouTube sx={{ color: "white" }} />{" "}
-                {/* Black color by default */}
+                <YouTube sx={{ color: "white" }} />
               </Link>
             </Box>
           </Grid>
@@ -151,23 +147,23 @@ export default function Footer() {
         <Box mt={5}>
           <Typography variant="body2" color="white" align="center">
             {"Copyright © "}
-            <Link color="inherit" href="/">
+            <Link color="inherit" href="/" target="_blank">
               ARMADIA for Constractions
             </Link>{" "}
             {new Date().getFullYear()}
             {"."}
-            {/* <br /> */}
-            
-              
-              <Link
-                color="inherit"
-                href="https://www.facebook.com/MuhammetShawky/"
-                sx={{
-                  mx: 10, // Margin between icons
-                }}
-              >
-                By.Muhammet Shawky
-              </Link>{" "}
+            <br />
+            <br />
+            <Link
+              color="inherit"
+              href="https://www.facebook.com/MuhammetShawky/"
+              target="_blank"
+              sx={{
+                mx: 5,
+              }}
+            >
+              By.Muhammet Shawky
+            </Link>
           </Typography>
         </Box>
       </Container>

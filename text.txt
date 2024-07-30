@@ -1,6 +1,134 @@
 color: "#FFC107
+---------------
+from
 
 
+
+// import React, { useRef } from "react";
+// import { Box, Button, TextField, Typography } from "@mui/material";
+// import emailjs from '@emailjs/browser';
+
+
+// const MyForm = () => {
+//   const form = useRef<HTMLFormElement>(null);
+
+//   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+
+//     if (form.current) {
+//       const formData = new FormData(form.current);
+//       formData.append('service_id', 'service_6ejek2a');
+//       formData.append('template_cpydsuq', 'template_rh7qld9');
+//       formData.append('user_id', '631yNf2CGoAzC5kug');
+
+//            // const formData = new FormData(form.current);
+//       // formData.append('service_id', 'service_6ejek2a');
+//       // formData.append('template_lgql9an', 'template_rh7qld9');
+//       // formData.append('user_id', '631yNf2CGoAzC5kug');
+
+//       try {
+//         const response = await fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
+//           method: 'POST',
+//           body: formData,
+//         });
+
+//         if (response.ok) {
+//           alert('Your mail is sent!');
+//         } else {
+//           const errorData = await response.json();
+//           alert('Oops... ' + JSON.stringify(errorData));
+//         }
+//       } catch (error: unknown) {
+//         if (error instanceof Error) {
+//           alert('Oops... ' + error.message);
+//         } else {
+//           alert('An unknown error occurred');
+//         }
+//       }
+//     }
+//   };
+
+//   return (
+//     <Box
+//       component="form"
+//       ref={form}
+//       onSubmit={sendEmail}
+//       id="myForm"
+//       sx={{
+//         maxWidth: 400,
+//         margin: "0 auto",
+//         padding: 2,
+//         backgroundColor: "#1a2b44",
+//         borderRadius: 1,
+//         boxShadow: 1,
+//       }}
+//     >
+//       <Typography variant="h4" component="h1" color="white" gutterBottom>
+//         Request a Quote
+//       </Typography>
+//       <Typography variant="body1" color="white" gutterBottom>
+//         Ready to Work Together? Build a project with us!
+//       </Typography>
+//       <TextField
+//         fullWidth
+//         variant="outlined"
+//         label="Name"
+//         name="user_name"
+//         required
+//         margin="normal"
+//         sx={{ backgroundColor: "white" }}
+//       />
+//       <TextField
+//         fullWidth
+//         variant="outlined"
+//         label="Email"
+//         name="user_email"
+//         required
+//         margin="normal"
+//         sx={{ backgroundColor: "white" }}
+//       />
+//       <TextField
+//         fullWidth
+//         variant="outlined"
+//         label="Phone"
+//         name="user_phone"
+//         required
+//         margin="normal"
+//         sx={{ backgroundColor: "white" }}
+//       />
+//       <TextField
+//         fullWidth
+//         variant="outlined"
+//         label="Message"
+//         name="message"
+//         required
+//         margin="normal"
+//         multiline
+//         rows={4}
+//         sx={{ backgroundColor: "white" }}
+//       />
+//       <Button
+//         type="submit"
+//         variant="contained"
+//         color="primary"
+//         fullWidth
+//         sx={{
+//           marginTop: 2,
+//           backgroundColor: "#ffc107",
+//           "&:hover": {
+//             backgroundColor: "#e0a800"
+//           }
+//         }}
+//       >
+//         Send Message
+//       </Button>
+//     </Box>
+//   );
+// };
+
+// export default MyForm;
+
+----------------------
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";

@@ -4,7 +4,7 @@ import { Box, Typography, Grid, Avatar } from '@mui/material';
 
 const teamMembers = [
   {
-    name: 'Kal Attia',
+    name: 'eiad',
     image: 'https://scontent-cpt1-1.xx.fbcdn.net/v/t31.18172-8/12239270_1166371866723609_3834577204263080685_o.jpg?_nc_cat=107&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeF5TPXsk7KFzDE4uXAOgnQ2Bij9cyaJrsEGKP1zJomuwVDOVZeL_R6vIHwJAkm6_To&_nc_ohc=Z0AgSmizUSUQ7kNvgEIKACM&_nc_ht=scontent-cpt1-1.xx&oh=00_AYDTSnQH_cpoCmGcOmnm0ISW4Zd_iJcVaFlDiEQZ3fx7mA&oe=66C5B363', // استبدل هذا المسار بمسار الصورة الفعلي
     position: 'CEO',
     description: 'Kal is the CEO of the company with over 20 years of experience.',

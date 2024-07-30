@@ -7,6 +7,8 @@ import OurTeam from "../../Components/OurTeam";
 import HeroAll from "../../Components/HeroAll";
 import Footer from "../../Components/Footer";
 
+// import MyForm from "../../Components/MyForm";
+
 const AboutUs: React.FC = () => {
   return (
     <>
@@ -14,6 +16,8 @@ const AboutUs: React.FC = () => {
       <Container sx={{ py: 6 }}>
         <AboutInfo />
         <OurTeam />
+
+        {/* <MyForm /> */}
         
       </Container>
       <Footer />
