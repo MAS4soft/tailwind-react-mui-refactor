@@ -88,7 +88,7 @@ export default function Footer() {
                 <Facebook sx={{ color: "white" }} />
               </Link>
               <Link
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/armadia.for.constractins "
                 color="inherit"
                 target="_blank" // Add this line
                 sx={{

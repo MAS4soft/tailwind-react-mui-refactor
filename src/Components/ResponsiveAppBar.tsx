@@ -187,7 +187,7 @@ function ResponsiveAppBar() {
             </Tooltip>
             <Tooltip title="Instagram">
               <IconButton
-                href="https://www.instagram.com" // Replace with your Instagram link
+                href="https://www.instagram.com/armadia.for.constractins " // Replace with your Instagram link
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ p: 0, mx: 1 }} // Added margin

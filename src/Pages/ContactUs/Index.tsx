@@ -4,6 +4,7 @@ import ContactDetails from "../../Components/ContactDetails";
 import Footer from "../../Components/Footer";
 import HeroAll from "../../Components/HeroAll";
 import RequestQuote from "../../Components/RequestQuote"; // تأكد من تعديل المسار ليشير إلى مكان `RequestQuote`
+import FAQ from "../../Components/FAQ";
 
 const theme = createTheme({
   palette: {
@@ -42,6 +43,7 @@ const ContactForm = () => {
             </Typography>
             
             <RequestQuote />
+            <FAQ />
           </Box>
         </Box>
       </Container>
