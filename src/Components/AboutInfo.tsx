@@ -1,14 +1,14 @@
-import React from "react";
 import { Box, Typography, Grid, Button } from "@mui/material";
 import { Business, HistoryEdu, HomeWork } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom"; // استيراد useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 const AboutInfo: React.FC = () => {
-  const navigate = useNavigate(); // إنشاء دالة التوجيه
+  const navigate = useNavigate(); 
   
   const handleServicesButtonClick = () => {
     navigate("/services");
   };
+  
   return (
     <Box sx={{ py: 2 }}>
       <Grid container spacing={4} alignItems="stretch">
@@ -20,7 +20,7 @@ const AboutInfo: React.FC = () => {
           sx={{ display: "flex", alignItems: "center" }}
         >
           <Box sx={{ mb: 6, maxWidth: "100%" }}>
-            <Typography variant="h5" color="text.primary" gutterBottom>
+            <Typography variant="h5" color="primary" gutterBottom>
               About Us
             </Typography>
             <Typography variant="h3" fontWeight="bold" gutterBottom>
@@ -71,7 +71,7 @@ const AboutInfo: React.FC = () => {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Business sx={{ fontSize: 40, color: "text.primary", mr: 2 }} />
+              <Business sx={{ fontSize: 40, color: "primary.main", mr: 2 }} />
               <Box>
                 <Typography variant="h4" fontWeight="bold">
                   Building Staffs
@@ -83,7 +83,7 @@ const AboutInfo: React.FC = () => {
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <HistoryEdu sx={{ fontSize: 40, color: "text.primary", mr: 2 }} />
+              <HistoryEdu sx={{ fontSize: 40, color: "primary.main", mr: 2 }} />
               <Box>
                 <Typography variant="h4" fontWeight="bold">
                   History Emphasis
@@ -95,7 +95,7 @@ const AboutInfo: React.FC = () => {
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <HomeWork sx={{ fontSize: 40, color: "text.primary", mr: 2 }} />
+              <HomeWork sx={{ fontSize: 40, color: "primary.main", mr: 2 }} />
               <Box>
                 <Typography variant="h4" fontWeight="bold">
                   Economic Outcomes

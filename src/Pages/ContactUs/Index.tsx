@@ -55,8 +55,7 @@ const ContactUsPage = () => {
 
         <ContactSection contacts={contacts} />
 
-        <RequestQuoteAndFAQ /> 
-        
+        <RequestQuoteAndFAQ />
       </Container>
 
       <Footer />

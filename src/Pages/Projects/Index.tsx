@@ -9,7 +9,7 @@ function Projects() {
   return (
     <div>
       <HeroAll text="Projects" />
-      <AllProjects />
+      <AllProjects limit={8} title="Featured Projects" />
       <OurClients />
       <Footer />
     </div>

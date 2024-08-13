@@ -1,4 +1,4 @@
-import React from 'react';
+// src\Components\Project.tsx
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 
 interface ProjectProps {
@@ -23,7 +23,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
         bottom: 0, 
         width: '100%', 
         background: 'rgba(0, 0, 0, 0.5)', 
-        color: 'text.secondary' 
+        color: 'common.white' 
       }}>
         <Typography variant="h6" fontWeight="bold">
           {project.title}

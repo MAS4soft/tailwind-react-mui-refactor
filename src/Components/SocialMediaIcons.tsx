@@ -35,7 +35,7 @@ const SocialMediaIcons: React.FC = () => {
         "& .MuiSvgIcon-root": {
           color: theme.palette.primary.main ,
           "&:hover": {
-            color: theme.palette.text.secondary, // Apply hover color
+            color: theme.palette.common.white, // Apply hover color
           },
         },
       }}

@@ -74,8 +74,8 @@ const Testimonials: React.FC = () => {
             <Box
               sx={{
                 padding: "2rem",
-                backgroundColor: "#1e2949",
-                color: "#fff",
+                backgroundColor: theme.palette.secondary.main ,
+                color: theme.palette.common.white ,
                 borderRadius: "0px",
                 position: "relative",
               }}

@@ -150,7 +150,7 @@ const RequestQuote: React.FC = () => {
         bgcolor: theme.palette.secondary.main ,
         p: 4,
         borderRadius: 1,
-        color: theme.palette.text.secondary,
+        color: theme.palette.common.white,
         maxWidth: 500,
         margin: 'auto',
       }}
@@ -203,7 +203,7 @@ const RequestQuote: React.FC = () => {
           error={!!errors.name}
           helperText={errors.name}
           InputLabelProps={{
-            sx: { color: 'gray' },
+            sx: { color: theme.palette.text.secondary },
           }}
         />
         <CustomTextField
@@ -216,7 +216,7 @@ const RequestQuote: React.FC = () => {
           error={!!errors.email}
           helperText={errors.email}
           InputLabelProps={{
-            sx: { color: 'gray' },
+            sx: { color: theme.palette.text.secondary },
           }}
         />
         <CustomTextField
@@ -229,7 +229,7 @@ const RequestQuote: React.FC = () => {
           error={!!errors.phone}
           helperText={errors.phone}
           InputLabelProps={{
-            sx: { color: 'gray' },
+            sx: { color: theme.palette.text.secondary },
           }}
         />
         <CustomTextField
@@ -243,13 +243,13 @@ const RequestQuote: React.FC = () => {
           error={!!errors.message}
           helperText={errors.message}
           InputLabelProps={{
-            sx: { color: 'gray' },
+            sx: { color: theme.palette.text.secondary },
           }}
         />
         <Button
           variant='contained'
-          color='warning'
-          sx={{ mt: 2, height: 32 }}
+          color='primary'
+          sx={{ mt: 4, height: 40 }}
           type='submit'
           disabled={Object.values(errors).some(error => error !== '')}
         >

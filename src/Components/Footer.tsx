@@ -7,7 +7,7 @@ const Footer = () => {
     <Box
       sx={{
         backgroundColor: "secondary.main",
-        color: "text.secondary",
+        color: "white",
         py: 4,
         p: 6,
         mt: 6,

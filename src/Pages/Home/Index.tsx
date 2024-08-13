@@ -24,7 +24,7 @@ const Home = () => {
         <SuccessStats />
       </Box>
       <AllServices />
-      <AllProjects />
+      <AllProjects limit={4} title="Featured Projects" />
 
       <AboutFounders />
 

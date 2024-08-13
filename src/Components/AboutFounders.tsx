@@ -9,7 +9,7 @@ const founders = [
   {
     name: "MOHAMED SHAWKY",
     title: "CTO",
-    image: 'https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/448591170_10232860712239115_5874388634725478478_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHS87vU8fj6X3gsTTfqD0wvrz4yw-L_jxmvPjLD4v-PGSmBKflZV-aTqp7fQud0CXU&_nc_ohc=ju2sKKrEI7QQ7kNvgFhvbZa&_nc_ht=scontent-cpt1-1.xx&oh=00_AYDjAaK0E5ZvHt2t1LjOmM74FuJLASpiBbaCjaqyk2Iirg&oe=66A42276',
+    image: 'https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/454505222_10233305216031432_4141538133584700054_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFLOn2IoPDiqU8xbBjwJV4XqpVL9pTpHPSqlUv2lOkc9CGMhqkGMYocokoWQMgzOtc&_nc_ohc=kYI2JmulFU0Q7kNvgG3nl8a&_nc_ht=scontent-cpt1-1.xx&oh=00_AYCZLTOFrrAbmMc9osu0YhEhGfpDQs-4UKxJ_aL1qklU5A&oe=66C14018',
   },
   {
     name: "ZAAHID",
