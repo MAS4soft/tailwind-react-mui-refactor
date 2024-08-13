@@ -1,13 +1,12 @@
 // src/Components/SocialMediaIcons.tsx
 
 import React from "react";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
 import SocialMediaLink from "./SocialMediaLink";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import XIcon from "@mui/icons-material/X";
+import { Box, useTheme } from "@mui/material";
 
 const socialMediaLinks = [
   {

@@ -1,9 +1,8 @@
 // src/Components/SocialMediaLink.tsx
 
 import React from "react";
-import { SvgIconProps } from "@mui/material/SvgIcon";
 import { useTheme } from "@mui/material/styles";
-import { Link } from "@mui/material";
+import { Link, SvgIconProps } from "@mui/material";
 
 interface SocialMediaLinkProps {
   href: string;

@@ -1,5 +1,4 @@
 import { Typography, Button, Container } from "@mui/material";
-import "../index.css";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {

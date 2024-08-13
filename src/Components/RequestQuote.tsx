@@ -12,8 +12,8 @@ import {
   Snackbar,
   Alert,
   Grid,
+  useTheme,
 } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 
 const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
 const validatePhone = (phone: string) => /^[0-9]*$/.test(phone);

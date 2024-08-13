@@ -8,14 +8,12 @@ import About from "./Pages/About/Index";
 import ContactUs from "./Pages/ContactUs/Index";
 import ResponsiveAppBar from "./Components/ResponsiveAppBar";
 import ScrollToTop from "./Components/ScrollToTop";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { themeOptions } from "./theme";
+import './index.css'
 
-const theme = createTheme(themeOptions);
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+  <>
       <ResponsiveAppBar />
       <ScrollToTop />
       <Routes>
@@ -26,7 +24,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contactus" element={<ContactUs />} />
       </Routes>
-    </ThemeProvider>
+  </>
   );
 };
 

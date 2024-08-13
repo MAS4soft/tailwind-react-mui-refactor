@@ -1,19 +1,8 @@
-// src/Components/ResponsiveAppBar.tsx
-
-import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import { Link, useLocation } from "react-router-dom";
-import Button from "@mui/material/Button";
-import { styled, useTheme } from "@mui/material/styles";
 import SocialMediaIcons from "./SocialMediaIcons";
+import { useState } from "react";
+import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, styled, Toolbar, Typography, useTheme } from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 
 const pages = ["Home", "Services", "Projects", "About", "Contact Us"];
 
@@ -31,7 +20,7 @@ const Logo = styled("img")(({ theme }) => ({
 
 function ResponsiveAppBar() {
   const theme = useTheme();
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(
     null
   );
   const location = useLocation();

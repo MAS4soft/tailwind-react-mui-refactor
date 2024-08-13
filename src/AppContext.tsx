@@ -17,7 +17,7 @@ import { PropsWithChildren } from 'react'
 import { themeOptions } from './theme'
 import { ThemeProvider } from '@mui/material/styles'
 //every component should have props types to ensure that the correct props are passed to the component
-type AppWithContextProps = {}
+type AppWithContextProps = object
 //PropsWithChildren is a utility type that allows you to define a component that accepts children.
 // by default all React components accept children, but its a neat thing to have in the type definition
 export default function AppWithContext(props: PropsWithChildren<AppWithContextProps>) {
