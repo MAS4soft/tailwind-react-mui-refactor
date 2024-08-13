@@ -1,3 +1,5 @@
+// src\Pages\Projects\Index.tsx
+
 import Footer from "../../Components/Footer";
 import AllProjects from "../../Components/AllProjects";
 import HeroAll from "../../Components/HeroAll";

@@ -33,7 +33,6 @@ const ContactForm = () => {
             </Typography>
           </Box>
         </Box>
-        {/* إضافة مكون RequestQuote هنا */}
         <Box display="flex" justifyContent="center" mt={4}>
           <Box width={{ xs: "100%", sm: "80%", md: "60%", lg: "50%" }}>
             <RequestQuote />

@@ -1,3 +1,4 @@
+// src\Components\FAQ.tsx
 import React, { useState } from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -22,12 +23,12 @@ const FAQ: React.FC = () => {
           onChange={handleChange(index)}
         >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="subtitle1" style={{ fontWeight: 'bold' }}>
+            <Typography variant="subtitle1" style={{ fontWeight: 'bold'  }}>
               {faq.question}
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{faq.answer}</Typography>
+            <Typography style={{  color :'black' }}>{faq.answer}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
@@ -35,4 +36,5 @@ const FAQ: React.FC = () => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default FAQ;

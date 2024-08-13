@@ -1,5 +1,9 @@
-import React from 'react';
-import { Box, Typography, Grid, Container } from '@mui/material';
+// src\Components\OurClints.tsx
+
+import { Box, Typography, Container } from '@mui/material';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface Client {
   name: string;
@@ -7,30 +11,64 @@ interface Client {
 }
 
 const clients: Client[] = [
-  { name: 'Logoipsum', logo: 'logo1.png' },
-  { name: 'Logoipsum', logo: 'logo2.png' },
-  { name: 'Logoipsum', logo: 'logo3.png' },
-  { name: 'Logoipsum', logo: 'logo4.png' },
-  // أضف المزيد من العملاء إذا لزم الأمر، ولكن نعرض فقط 4 في هذه الحالة
+  { name: 'test', logo: 'https://tse1.mm.bing.net/th?id=OIP.shGqLcB1YOfWp3Vv75oxSwHaF7&pid=Api&P=0&h=220' },
+  { name: 'pix', logo: 'https://devtools.com.br/img/pix/logo-pix-png-930x616.png' },
+  { name: 'Logoipsum', logo: 'https://t4.ftcdn.net/jpg/04/44/94/79/360_F_444947921_xhrE42lESW5y8zGJmuulfO6C4YxqfihJ.jpg' },
+  { name: 'Logoipsum', logo: 'https://tse4.mm.bing.net/th?id=OIP.q_Jg0w81S5g7u_0-W8YckgHaF7&pid=Api&P=0&h=220' },
+  { name: 'citymall', logo: 'https://tse4.mm.bing.net/th?id=OIP.jHF5sePyxcGuo4qkLKk0AgHaDt&pid=Api&P=0&h=220' },
+  { name: 'Logoipsum', logo: 'https://tse4.mm.bing.net/th?id=OIP.NDUnCXsbAIK8DREMK_HMEAHaHa&pid=Api&P=0&h=220' },
+  { name: 'Logoipsum', logo: 'https://tse4.mm.bing.net/th?id=OIP.sffFPxT4ouHJLPhoQGn0JAHaHa&pid=Api&P=0&h=220' },
+  // Add more clients if needed
 ];
 
 const OurClients: React.FC = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <Container>
       <Box mt={8} textAlign="center">
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h5" gutterBottom fontWeight="bold" sx={{ color: 'text.primary' }}>
           Trust and Worth
         </Typography>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h3" gutterBottom fontWeight="bold" >
           Our Clients
         </Typography>
-        <Grid container spacing={2} justifyContent="center">
+        <Slider {...settings}>
           {clients.map((client, index) => (
-            <Grid item key={index} xs={12} sm={6} md={3} textAlign="center">
-              <img src={client.logo} alt={client.name} style={{ height: 50, width: 'auto' }} />
-            </Grid>
+            <Box key={index} textAlign="center" p={2}>
+              <img src={client.logo} alt={client.name} style={{ height: 100, width: 'auto' }} />
+            </Box>
           ))}
-        </Grid>
+        </Slider>
       </Box>
     </Container>
   );

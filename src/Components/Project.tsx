@@ -23,7 +23,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
         bottom: 0, 
         width: '100%', 
         background: 'rgba(0, 0, 0, 0.5)', 
-        color: '#fff' 
+        color: 'text.secondary' 
       }}>
         <Typography variant="h6" fontWeight="bold">
           {project.title}

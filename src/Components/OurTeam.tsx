@@ -11,13 +11,13 @@ const teamMembers = [
   },
   {
     name: 'Mido Shawky',
-    image: 'https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/448591170_10232860712239115_5874388634725478478_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHS87vU8fj6X3gsTTfqD0wvrz4yw-L_jxmvPjLD4v-PGSmBKflZV-aTqp7fQud0CXU&_nc_ohc=ju2sKKrEI7QQ7kNvgFhvbZa&_nc_ht=scontent-cpt1-1.xx&oh=00_AYDjAaK0E5ZvHt2t1LjOmM74FuJLASpiBbaCjaqyk2Iirg&oe=66A42276', // استبدل هذا المسار بمسار الصورة الفعلي
+    image: 'https://scontent.fcpt5-1.fna.fbcdn.net/v/t39.30808-6/448591170_10232860712239115_5874388634725478478_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHS87vU8fj6X3gsTTfqD0wvrz4yw-L_jxmvPjLD4v-PGSmBKflZV-aTqp7fQud0CXU&_nc_ohc=0J7mrMgYOrcQ7kNvgHOJ-IG&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fcpt5-1.fna&oh=00_AYCOS3u-9fjiUernWbPokmD2TdCLzoTxq76ENOY9iS5Peg&oe=66B7B0B6', // استبدل هذا المسار بمسار الصورة الفعلي
     position: 'CTO',
     description: 'Mido is the CTO and leads the technology department.',
   },
   {
     name: 'Zaaaaaahid',
-    image: '../src/assets/zaahid.jpg', // استبدل هذا المسار بمسار الصورة الفعلي
+    image: '../src/assets/zaahid.jpg',
     position: 'CFO',
     description: 'Ay is the CFO and manages the company finances.',
   },

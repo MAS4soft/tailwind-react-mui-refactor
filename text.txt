@@ -1,4 +1,174 @@
+
+
+// src/Components/Footer.tsx
+
+import React from "react";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import { Box, Link } from "@mui/material";
+import SocialMediaLink from "./SocialMediaLink"; 
+import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
+
+const socialMediaLinks = [
+  {
+    href: "https://www.facebook.com/",
+    icon: <Facebook />,
+    label: "Facebook"
+  },
+  {
+    href: "https://www.instagram.com/armadia.for.constractins",
+    icon: <Instagram />,
+    label: "Instagram"
+  },
+  {
+    href: "https://www.twitter.com/",
+    icon: <Twitter />,
+    label: "Twitter"
+  },
+  {
+    href: "https://www.youtube.com/",
+    icon: <YouTube />,
+    label: "YouTube"
+  },
+];
+
+const Footer: React.FC = () => {
+  const theme = useTheme();
+
+  return (
+    <Box
+      component="footer"
+      sx={{
+        backgroundColor: (theme) =>
+          theme.palette.mode === "dark"
+            ? theme.palette.grey[200]
+            : theme.palette.grey[800],
+        p: 6,
+        mt: 10,
+      }}
+    >
+      <Container maxWidth="lg">
+        <Grid container spacing={5}>
+          <Grid item xs={12} sm={4}>
+            <Typography
+              variant="h6"
+              color={theme.palette.primary.main}
+              gutterBottom
+              textAlign="center"
+            >
+              About Us
+            </Typography>
+            <Typography variant="body2" color={theme.palette.text.secondary}>
+              We are Armadia company, dedicated to providing the best service to
+              our customers.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Typography
+              variant="h6"
+              color={theme.palette.primary.main}
+              gutterBottom
+              textAlign="center"
+            >
+              Contact Us
+            </Typography>
+            <Typography variant="body2" color={theme.palette.text.secondary}>
+              4 Mountain View Rd, Tiger Valley, Cape Town, 7530
+            </Typography>
+            <Typography variant="body2" color={theme.palette.text.secondary}>
+              Email: info@Armadai.com
+            </Typography>
+            <Typography variant="body2" color={theme.palette.text.secondary}>
+              Phone: +27 234 567 890
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Typography
+              variant="h6"
+              color={theme.palette.primary.main}
+              gutterBottom
+              textAlign="center"
+            >
+              Follow Us
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                "& .MuiSvgIcon-root": {
+                  color: "white",
+                  "&:hover": {
+                    color: theme.palette.warning.main,
+                  },
+                },
+              }}
+            >
+              {socialMediaLinks.map((link) => (
+                <SocialMediaLink key={link.label} {...link} />
+              ))}
+            </Box>
+          </Grid>
+        </Grid>
+        <Box mt={5}>
+          <Typography variant="body2" color={theme.palette.text.secondary} align="center">
+            {"Copyright © "}
+            <Link color="inherit" href="/" target="_blank">
+              ARMADIA for Constractions
+            </Link>{" "}
+            {new Date().getFullYear()}
+            {"."}
+            <br />
+            <br />
+            <Link
+              color="inherit"
+              href="https://www.facebook.com/MuhammetShawky/"
+              target="_blank"
+              sx={{
+                mx: 5,
+              }}
+            >
+              By.Muhammet Shawky
+            </Link>
+          </Typography>
+        </Box>
+      </Container>
+    </Box>
+  );
+};
+
+export default Footer;
+------
+
+
+// src/theme.ts
+import { ThemeOptions } from "@mui/material/styles";
+
+export const themeOptions: ThemeOptions = {
+  palette: {
+    primary: {
+      main: "#ffb300",
+    },
+    secondary: {
+      main: "#FFC107",
+    },
+    warning: {
+      main: "#FFD700",
+    },
+    text: {
+      primary: "#ffb300",
+      secondary: "#fff" 
+    },
+  },
+};
+
+
 color: "#FFC107
+// palette.secondary
+// #424242
+
 ---------------
 from
 

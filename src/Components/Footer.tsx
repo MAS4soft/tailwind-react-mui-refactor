@@ -1,172 +1,118 @@
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
-import { Box } from "@mui/material";
+// src/Components/Footer.tsx
+import { Box, Typography, Grid, Container, Divider } from "@mui/material";
+import SocialMediaIcons from "./SocialMediaIcons"; // استيراد المكون الجديد
 
-export default function Footer() {
+const Footer = () => {
   return (
     <Box
-      component="footer"
       sx={{
-        backgroundColor: (theme) =>
-          theme.palette.mode === "dark"
-            ? theme.palette.grey[200]
-            : theme.palette.grey[800],
+        backgroundColor: "secondary.main",
+        color: "text.secondary",
+        py: 4,
         p: 6,
-        mt: 10,
+        mt: 6,
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={5}>
-          <Grid item xs={12} sm={4}>
-            <Typography
-              variant="h6"
-              color="#FFC107"
-              gutterBottom
-              textAlign="center"
-            >
-              About Us
+        <Grid
+          container
+          spacing={4}
+          sx={{
+            textAlign: { xs: "center", md: "left" },
+            justifyContent: { xs: "center", md: "flex-start" },
+            p: 3,
+          }}
+        >
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
+              Build With Urban Nest
             </Typography>
-            <Typography variant="body2" color="white">
-              We are Armadia company, dedicated to providing the best service to
-              our customers.
+            <Typography variant="body2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque in ipsum id orci.
             </Typography>
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <Typography
-              variant="h6"
-              color="#FFC107"
-              gutterBottom
-              textAlign="center"
-            >
-              Contact Us
-            </Typography>
-            <Typography variant="body2" color="white">
-              4 Mountain View Rd, Tiger Valley, Cape Town, 7530{" "}
-            </Typography>
-            <Typography variant="body2" color="white">
-              Email: info@Armadai.com
-            </Typography>
-            <Typography variant="body2" color="white">
-              Phone: +27 234 567 890
+            <Typography variant="body2" sx={{ mt: 2 }}>
+              Mon - Sat 8:00 - 17:30,
+              <br />
+              Sunday - CLOSED
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <Typography
-              variant="h6"
-              color="#FFC107"
-              gutterBottom
-              textAlign="center"
-            >
-              Follow Us
+
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
+              Our Services
             </Typography>
+            <Typography variant="body2">
+              Chemical Engineering Projects
+            </Typography>
+            <Typography variant="body2">
+              Mining Engineering Construction
+            </Typography>
+            <Typography variant="body2">
+              Engineering Welding Engineering
+            </Typography>
+            <Typography variant="body2">Welding Engineering</Typography>
+            <Typography variant="body2">Space Program XYZ</Typography>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
+              Office in South Africa
+            </Typography>
+            <Typography variant="body2">
+              4 Mountain View Rd, Bloemhof,
+              <br />
+              Tiger Valley, Cape Town 7530
+            </Typography>
+            <br />
+            <Typography variant="body2">(+27) 826-826-165</Typography>
+            <Typography variant="body2">(+20) 111-0052-444</Typography>
+            <br />
+            <Typography variant="body2">info@Armadia.com</Typography>
+            <Typography variant="body2">contact@Armadia.com</Typography>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
+              Our Locations
+            </Typography>
+            <Typography variant="body2">SOUTH AFRICA</Typography>
+            <br />
+            <Typography variant="body2">EGYPT</Typography>
+          </Grid>
+        </Grid>
+
+<Divider sx={{ my: 4, backgroundColor: "#ffffff33",  }} />
+
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            textAlign: { xs: "center", md: "left" },
+            justifyContent: { xs: "center", md: "space-between" },
+            alignItems: "center",
+          }}
+        >
+          <Grid item xs={12} md={6}>
+            <Typography variant="body2" color="inherit">
+              Copyright © 2024 ARMADIA Construction Company
+            </Typography>
+          </Grid>
+
+          <Grid item xs={12} md={6}>
             <Box
               sx={{
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                justifyContent: { xs: "center", md: "flex-end" },
               }}
             >
-              <Link
-                href="https://www.facebook.com/"
-                color="inherit"
-                target="_blank" // Add this line
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  mx: 2,
-                  "&:hover svg": {
-                    color: "#FFC107",
-                  },
-                  "@media (max-width: 960px)": {
-                    mx: 0,
-                  },
-                }}
-              >
-                <Facebook sx={{ color: "white" }} />
-              </Link>
-              <Link
-                href="https://www.instagram.com/armadia.for.constractins "
-                color="inherit"
-                target="_blank" // Add this line
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  mx: 2,
-                  "&:hover svg": {
-                    color: "#FFC107",
-                  },
-                  "@media (max-width: 960px)": {
-                    mx: 0,
-                  },
-                }}
-              >
-                <Instagram sx={{ color: "white" }} />
-              </Link>
-              <Link
-                href="https://www.twitter.com/"
-                color="inherit"
-                target="_blank" // Add this line
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  mx: 2,
-                  "&:hover svg": {
-                    color: "#FFC107",
-                  },
-                  "@media (max-width: 960px)": {
-                    mx: 0,
-                  },
-                }}
-              >
-                <Twitter sx={{ color: "white" }} />
-              </Link>
-              <Link
-                href="https://www.youtube.com/"
-                color="inherit"
-                target="_blank" // Add this line
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  mx: 2,
-                  "&:hover svg": {
-                    color: "#FFC107",
-                  },
-                  "@media (max-width: 960px)": {
-                    mx: 0,
-                  },
-                }}
-              >
-                <YouTube sx={{ color: "white" }} />
-              </Link>
+              <SocialMediaIcons />
             </Box>
           </Grid>
         </Grid>
-        <Box mt={5}>
-          <Typography variant="body2" color="white" align="center">
-            {"Copyright © "}
-            <Link color="inherit" href="/" target="_blank">
-              ARMADIA for Constractions
-            </Link>{" "}
-            {new Date().getFullYear()}
-            {"."}
-            <br />
-            <br />
-            <Link
-              color="inherit"
-              href="https://www.facebook.com/MuhammetShawky/"
-              target="_blank"
-              sx={{
-                mx: 5,
-              }}
-            >
-              By.Muhammet Shawky
-            </Link>
-          </Typography>
-        </Box>
       </Container>
     </Box>
   );
-}
+};
+
+export default Footer;

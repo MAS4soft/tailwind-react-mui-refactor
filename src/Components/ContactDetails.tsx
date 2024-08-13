@@ -1,33 +1,38 @@
+// src/Components/ContactDetails.tsx
+
 import { Typography, Container, Box } from "@mui/material";
 
-const ContactDetails = () => {
-  return (
+interface ContactDetailsProps {
+  name : string;
+  address: string;
+  phone: string;
+  email: string;
+}
 
-    
+const ContactDetails = ({ name, address, phone, email }: ContactDetailsProps) => {
+  return (
     <Container>
       <Box my={4}>
-        <Typography variant="h4" gutterBottom>
-          Our Branches
-        </Typography>
-        <Typography variant="h5" gutterBottom>
-          Contact Details
-        </Typography>
-        <Typography variant="h6" gutterBottom>
-          South Africa Office
+        <Typography
+          variant="h6"
+          gutterBottom
+          sx={{ color: "warning.main", fontWeight: "bold" }}
+        >
+          {name}
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Address: 4 Mountain View Rd, Bloemhof, Cape Town, 7530 
-          <br />
-          Tiger Valley , Cape Town
+          <strong>Address:</strong> <br />
+          {address}
         </Typography>
         <br />
         <Typography variant="body1" gutterBottom>
-          Phone: +27 (238) 456 7894
+          <strong>Phone:</strong> <br />
+          {phone}
         </Typography>
+        <br />
         <Typography variant="body1" gutterBottom>
-          Email: info@Armadia.com
-          <br />
-          support@Armadia.com
+          <strong>Email:</strong> <br />
+          {email}
         </Typography>
       </Box>
     </Container>

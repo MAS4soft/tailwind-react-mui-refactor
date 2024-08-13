@@ -1,4 +1,6 @@
-import * as React from "react";
+// src/Components/ResponsiveAppBar.tsx
+
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,27 +12,29 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import { Link, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from "@mui/material/styles";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 const pages = ["Home", "Services", "Projects", "About", "Contact Us"];
 
-// Styled component for the logo image
-const Logo = styled('img')(({ theme }) => ({
-  height: 40, // Adjust the height as needed
-  display: 'block',
-  [theme.breakpoints.down('md')]: {
-    height: 30, // Adjust for smaller screens if needed
-  }
+const Logo = styled("img")(({ theme }) => ({
+  height: 40,
+  display: "block",
+  transition: "color 0.3s",
+  [theme.breakpoints.down("md")]: {
+    height: 30,
+  },
+  "&:hover": {
+    color: theme.palette.warning.main, // Apply hover color
+  },
 }));
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const location = useLocation(); // Get current route
+  const theme = useTheme();
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+  const location = useLocation();
   const currentPath = location.pathname;
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -42,25 +46,26 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar 
+    <AppBar
       position="fixed"
-      sx={{        
-        backgroundColor: "rgba(0, 0, 0, 0.5)", 
-        boxShadow: "none", 
-        py: .5,
-        top: 0, // Ensure it is fixed at the top
-        left: 0, // Ensure it spans full width
-        right: 0, // Ensure it spans full width
+      sx={{
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        boxShadow: "none",
+        py: 0.5,
+        top: 0,
+        left: 0,
+        right: 0,
       }}
     >
       <Container>
         <Toolbar disableGutters>
-          {/* Logo and company name for larger screens */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: 'center' }}>
+          <Box
+            sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
+          >
             <Logo
-              src="https://img.freepik.com/free-vector/flat-design-construction-company-logo_23-2150051906.jpg"
+              src="src\assets\logo.jpg"
               alt="Company Logo"
-              sx={{ mr: 1 }}
+              sx={{ mr: 2 }}
             />
             <Typography
               variant="h6"
@@ -71,16 +76,26 @@ function ResponsiveAppBar() {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: theme.palette.primary.main,
                 textDecoration: "none",
+                pr: 4,
+                "&:hover": {
+                  color: theme.palette.common.white, 
+                },
               }}
             >
-              ARMADIA
+              ARMADIA   
             </Typography>
           </Box>
 
-          {/* Logo and menu button for smaller screens */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, alignItems: 'center' }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
+              justifyContent: "flex-end", // Align to the right for mobile view
+            }}
+          >
             <Logo
               src="https://img.freepik.com/free-vector/flat-design-construction-company-logo_23-2150051906.jpg"
               alt="Company Logo"
@@ -94,9 +109,12 @@ function ResponsiveAppBar() {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: theme.palette.primary.main,
+                "&:hover": {
+                  color: theme.palette.common.white, // Apply hover color
+                },
                 textDecoration: "none",
-                ml: 2, // Space between logo and text
+                ml: 2,
               }}
             >
               ARMADIA
@@ -108,7 +126,13 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
-              sx={{ ml: 'auto' }}
+              sx={{
+                ml: "auto",
+                color: { xs: "white", md: "inherit" },
+                "&:hover": {
+                  color: theme.palette.primary.main, // Apply hover color
+                },
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -130,7 +154,7 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
                 "& .MuiMenuItem-root": {
                   "&:hover": {
-                    backgroundColor: "#FFD700",
+                    backgroundColor: theme.palette.primary.main,
                     color: "#000",
                   },
                 },
@@ -151,18 +175,27 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
 
-          {/* Buttons for larger screens */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
+              justifyContent: "flex-start", // Align to the right
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
-                  color: currentPath === `/${page.toLowerCase().replace(/\s+/g, "")}` ? '#FFD700' : 'white',
+                  color:
+                    currentPath === `/${page.toLowerCase().replace(/\s+/g, "")}`
+                      ? theme.palette.common.white
+                      : theme.palette.primary.main,
                   display: "block",
                   "&:hover": {
-                    color: "#FFD700",
+                    color: theme.palette.common.white,
                   },
                 }}
                 component={Link}
@@ -173,48 +206,14 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          {/* Social Media Icons */}
-          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
-            <Tooltip title="Facebook">
-              <IconButton
-                href="https://www.facebook.com" // Replace with your Facebook link
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ p: 0, mx: 1 }} // Added margin
-              >
-                <FacebookIcon sx={{ color: '#fff', "&:hover": { color: '#FFD700' } }} />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Instagram">
-              <IconButton
-                href="https://www.instagram.com/armadia.for.constractins " // Replace with your Instagram link
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ p: 0, mx: 1 }} // Added margin
-              >
-                <InstagramIcon sx={{ color: '#fff', "&:hover": { color: '#FFD700' } }} />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Twitter">
-              <IconButton
-                href="https://www.twitter.com" // Replace with your Twitter link
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ p: 0, mx: 1 }} // Added margin
-              >
-                <TwitterIcon sx={{ color: '#fff', "&:hover": { color: '#FFD700' } }} />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="YouTube">
-              <IconButton
-                href="https://www.youtube.com" // Replace with your YouTube link
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ p: 0, mx: 1 }} // Added margin
-              >
-                <YouTubeIcon sx={{ color: '#fff', "&:hover": { color: '#FFD700' } }} />
-              </IconButton>
-            </Tooltip>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "none", md: "flex" }, // Show only on large screens
+              alignItems: "center",
+              ml: "auto", // Move to the right
+            }}
+          >
+            <SocialMediaIcons />
           </Box>
         </Toolbar>
       </Container>

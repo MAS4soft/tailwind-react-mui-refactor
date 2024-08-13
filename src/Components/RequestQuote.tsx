@@ -1,4 +1,6 @@
-import React, { useState, useRef } from "react";
+// src/Components/RequestQuote.tsx
+
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import {
   TextField,
@@ -6,10 +8,74 @@ import {
   Box,
   Typography,
   FormHelperText,
+  CircularProgress,
+  Snackbar,
+  Alert,
+  Grid,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+
+const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
+const validatePhone = (phone: string) => /^[0-9]*$/.test(phone);
+
+const CustomTextField = ({
+  name,
+  label,
+  type = 'text',
+  value,
+  onChange,
+  onBlur,
+  error,
+  helperText,
+  multiline = false,
+  rows = 1,
+  InputLabelProps,
+  ...rest
+}: {
+  name: string;
+  label: string;
+  type?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur: () => void;
+  error: boolean;
+  helperText: string;
+  multiline?: boolean;
+  rows?: number;
+  InputLabelProps?: object;
+}) => (
+  <TextField
+    name={name}
+    label={label}
+    variant='outlined'
+    fullWidth
+    margin='normal'
+    type={type}
+    value={value}
+    onChange={onChange}
+    onBlur={onBlur}
+    error={error}
+    multiline={multiline}
+    rows={rows}
+    InputLabelProps={InputLabelProps}
+    sx={{ bgcolor: 'white', borderRadius: 1 }}
+    InputProps={{
+      endAdornment: error ? (
+        <FormHelperText sx={{ color: 'error.main', bgcolor: 'transparent' }}>
+          {helperText}
+        </FormHelperText>
+      ) : null,
+    }}
+    {...rest}
+  />
+);
 
 const RequestQuote: React.FC = () => {
+  const theme = useTheme();
   const form = useRef<HTMLFormElement | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,53 +89,24 @@ const RequestQuote: React.FC = () => {
     message: "",
   });
 
-  const validateEmail = (email: string) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-  };
-
-  const validatePhone = (phone: string) => {
-    const re = /^[0-9]*$/;
-    return re.test(phone);
-  };
-
   const handleBlur = (field: string) => {
-    const newErrors = { ...errors };
-
-    switch (field) {
-      case "name":
-        newErrors.name = name ? "" : "This field is required.";
-        break;
-      case "email":
-        if (!email) {
-          newErrors.email = "This field is required.";
-        } else if (!validateEmail(email)) {
-          newErrors.email = "Please enter a valid email address.";
-        } else {
-          newErrors.email = "";
-        }
-        break;
-      case "phone":
-        if (!phone) {
-          newErrors.phone = "This field is required.";
-        } else if (!validatePhone(phone)) {
-          newErrors.phone = "Please enter a valid phone number.";
-        } else {
-          newErrors.phone = "";
-        }
-        break;
-      case "message":
-        newErrors.message = message ? "" : "This field is required.";
-        break;
-      default:
-        break;
-    }
-
-    setErrors(newErrors);
+    setErrors(prevErrors => ({
+      ...prevErrors,
+      [field]: field === 'name'
+        ? name ? "" : "This field is required."
+        : field === 'email'
+        ? !email ? "This field is required." : !validateEmail(email) ? "Please enter a valid email address." : ""
+        : field === 'phone'
+        ? !phone ? "This field is required." : !validatePhone(phone) ? "Please enter a valid phone number." : ""
+        : field === 'message'
+        ? message ? "" : "This field is required."
+        : ""
+    }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
     const newErrors = {
       name: "",
       email: "",
@@ -78,174 +115,145 @@ const RequestQuote: React.FC = () => {
     };
 
     if (!name) newErrors.name = "This field is required.";
-    if (!email) {
-      newErrors.email = "This field is required.";
-    } else if (!validateEmail(email)) {
-      newErrors.email = "Please enter a valid email address.";
-    }
-    if (!phone) {
-      newErrors.phone = "This field is required.";
-    } else if (!validatePhone(phone)) {
-      newErrors.phone = "Please enter a valid phone number.";
-    }
+    if (!email) newErrors.email = "This field is required.";
+    else if (!validateEmail(email)) newErrors.email = "Please enter a valid email address.";
+    if (!phone) newErrors.phone = "This field is required.";
+    else if (!validatePhone(phone)) newErrors.phone = "Please enter a valid phone number.";
     if (!message) newErrors.message = "This field is required.";
 
     setErrors(newErrors);
-
-    if (!Object.values(newErrors).some((error) => error !== "")) {
-      if (form.current) {
-        emailjs
-          .sendForm(
-            "service_szbb8iq",
-            "template_eoqtyl8",
-            form.current,
-            "fozYvqgQK65jwJIJc"
-          )
-          .then(
-            () => {
-              console.log("SUCCESS!");
-              setName("");
-              setEmail("");
-              setPhone("");
-              setMessage("");
-              alert("Thanks for contacting us! We will be in touch with you shortly.");
-            },
-            (error) => {
-              console.log("FAILED...", error.text);
-            }
-          );
+    if (!Object.values(newErrors).some(error => error !== "") && form.current) {
+      try {
+        await emailjs.sendForm('service_szbb8iq', 'template_eoqtyl8', form.current, 'fozYvqgQK65jwJIJc');
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+        setIsSubmitted(true);
+        setLoading(false);
+      } catch (error) {
+        setIsError(true);
+        setLoading(false);
+        console.error('Failed to send email. Error:', error);
       }
+    } else {
+      setLoading(false);
     }
   };
 
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        bgcolor: "primary.light",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        bgcolor: theme.palette.secondary.main ,
         p: 4,
         borderRadius: 1,
-        color: "white",
+        color: theme.palette.text.secondary,
         maxWidth: 500,
-        margin: "auto",
+        margin: 'auto',
       }}
     >
-      <Typography variant="h4" gutterBottom>
+      <Snackbar
+        open={isSubmitted || isError}
+        autoHideDuration={6000}
+        onClose={() => {
+          setIsSubmitted(false);
+          setIsError(false);
+        }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Grid>
+          {isSubmitted && (
+            <Alert
+              onClose={() => setIsSubmitted(false)}
+              severity='success'
+              variant='filled'
+              sx={{ width: '100%' }}
+            >
+              Thanks for your message! We will get back to you soon.
+            </Alert>
+          )}
+          {isError && (
+            <Alert
+              onClose={() => setIsError(false)}
+              severity='error'
+              variant='filled'
+              sx={{ width: '100%' }}
+            >
+              Something went wrong. Please try again later.
+            </Alert>
+          )}
+        </Grid>
+      </Snackbar>
+      <Typography variant='h3' gutterBottom>
         Request a Quote
       </Typography>
-      <Typography variant="subtitle1" gutterBottom>
+      <Typography variant='subtitle1' gutterBottom>
         Ready to Work Together? Build a project with us!
       </Typography>
       <form ref={form} onSubmit={handleSubmit}>
-        <TextField
-          name="user_name"
-          label="Enter your name"
-          variant="outlined"
-          fullWidth
-          margin="normal"
+        <CustomTextField
+          name='user_name'
+          label='Enter your name'
           value={name}
           onChange={(e) => setName(e.target.value)}
-          onBlur={() => handleBlur("name")}
+          onBlur={() => handleBlur('name')}
           error={!!errors.name}
-          sx={{
-            bgcolor: "white",
-            borderRadius: 1,
-          }}
-          InputProps={{
-            endAdornment: errors.name ? (
-              <FormHelperText
-                sx={{ color: "error.main", bgcolor: "transparent" }}
-              >
-                {errors.name}
-              </FormHelperText>
-            ) : null,
+          helperText={errors.name}
+          InputLabelProps={{
+            sx: { color: 'gray' },
           }}
         />
-        <TextField
-          name="user_email"
-          label="Enter your email address"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          type="email"
+        <CustomTextField
+          name='user_email'
+          label='Enter your email address'
+          type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          onBlur={() => handleBlur("email")}
+          onBlur={() => handleBlur('email')}
           error={!!errors.email}
-          sx={{
-            bgcolor: "white",
-            borderRadius: 1,
-          }}
-          InputProps={{
-            endAdornment: errors.email ? (
-              <FormHelperText
-                sx={{ color: "error.main", bgcolor: "transparent" }}
-              >
-                {errors.email}
-              </FormHelperText>
-            ) : null,
+          helperText={errors.email}
+          InputLabelProps={{
+            sx: { color: 'gray' },
           }}
         />
-        <TextField
-          name="user_phone"
-          label="Enter your phone number"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          type="tel"
+        <CustomTextField
+          name='user_phone'
+          label='Enter your phone number'
+          type='tel'
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          onBlur={() => handleBlur("phone")}
+          onBlur={() => handleBlur('phone')}
           error={!!errors.phone}
-          sx={{
-            bgcolor: "white",
-            borderRadius: 1,
-          }}
-          InputProps={{
-            endAdornment: errors.phone ? (
-              <FormHelperText
-                sx={{ color: "error.main", bgcolor: "transparent" }}
-              >
-                {errors.phone}
-              </FormHelperText>
-            ) : null,
+          helperText={errors.phone}
+          InputLabelProps={{
+            sx: { color: 'gray' },
           }}
         />
-        <TextField
-          name="message"
-          label="Message"
-          variant="outlined"
-          fullWidth
+        <CustomTextField
+          name='message'
+          label='Message'
           multiline
           rows={4}
-          margin="normal"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          onBlur={() => handleBlur("message")}
+          onBlur={() => handleBlur('message')}
           error={!!errors.message}
-          sx={{
-            bgcolor: "white",
-            borderRadius: 1,
-          }}
-          InputProps={{
-            endAdornment: errors.message ? (
-              <FormHelperText
-                sx={{ color: "error.main", bgcolor: "transparent" }}
-              >
-                {errors.message}
-              </FormHelperText>
-            ) : null,
+          helperText={errors.message}
+          InputLabelProps={{
+            sx: { color: 'gray' },
           }}
         />
         <Button
-          variant="contained"
-          color="warning"
-          sx={{ mt: 2 }}
-          type="submit"
+          variant='contained'
+          color='warning'
+          sx={{ mt: 2, height: 32 }}
+          type='submit'
+          disabled={Object.values(errors).some(error => error !== '')}
         >
-          Send Message
+          {!loading ? 'Send Message' : <CircularProgress size={20} />}
         </Button>
       </form>
     </Box>

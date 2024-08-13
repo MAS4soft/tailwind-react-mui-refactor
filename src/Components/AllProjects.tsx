@@ -1,7 +1,19 @@
-import { Box, Grid, Typography } from '@mui/material';
-import Project from './Project'; // استيراد مكون Project
+// src/Components/AllProjects.tsx
 
-const projects = [
+import { Box, Grid, Typography } from '@mui/material';
+import Project from './Project'; 
+
+interface ProjectType {
+  title: string;
+  location: string;
+  image: string;
+}
+
+interface AllProjectsProps {
+  limit?: number; // Add limit prop with optional type
+}
+
+const projects: ProjectType[] = [
   {
     title: "Science Lab Building",
     location: "New York, USA",
@@ -44,17 +56,19 @@ const projects = [
   },
 ];
 
-const AllProjects = () => {
+const AllProjects = ({ limit }: AllProjectsProps) => {
+  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+
   return (
     <Box sx={{ py: 8 }}>
-      <Typography variant="h4" align="center" color="#FFC107" gutterBottom>
+      <Typography variant="h4" align="center" color="text.primary" gutterBottom>
         Our Projects
       </Typography>
       <Typography variant="h2" align="center" fontWeight="bold" gutterBottom>
         Latest Works
       </Typography>
-      <Grid container spacing={0} sx={{ px: 2 }}>
-        {projects.map((project, index) => (
+      <Grid container spacing={0} sx={{ px: 0 }}>
+        {displayedProjects.map((project, index) => (
           <Grid item xs={12} sm={6} md={3} key={index}>
             <Project project={project} />
           </Grid>

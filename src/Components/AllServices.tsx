@@ -55,10 +55,10 @@ const AllServices = () => {
 
   return (
     <Container sx={{ py: 8 }}>
-      <Typography variant="h4" align="left" gutterBottom sx={{ color: '#232837' }}>
+      <Typography variant="h4" align="left" gutterBottom sx={{ color: 'text.primary' }}>
         Build Your Dream
       </Typography>
-      <Typography variant="h3" align="left" gutterBottom sx={{ color: '#232837' , fontWeight: 'bold' }}>
+      <Typography variant="h3" align="left" gutterBottom sx={{  fontWeight: 'bold' }}>
         Quality Services
       </Typography>
       <Grid container spacing={3} justifyContent="center">
@@ -79,10 +79,10 @@ const AllServices = () => {
                 sx={{ height: 300, objectFit: "cover" }}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h5" component="h2" sx={{ fontWeight: 'bold' ,  }}>
                   {service.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" sx={{ color : "black"}} >
                   {service.description}
                 </Typography>
               </CardContent>

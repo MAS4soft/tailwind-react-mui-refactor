@@ -6,6 +6,8 @@ import OurTeam from "../../Components/OurTeam";
 
 import HeroAll from "../../Components/HeroAll";
 import Footer from "../../Components/Footer";
+import Sustainability from "../../Components/Sustainability";
+import OurClients from "../../Components/OurClints";
 
 // import MyForm from "../../Components/MyForm";
 
@@ -16,10 +18,10 @@ const AboutUs: React.FC = () => {
       <Container sx={{ py: 6 }}>
         <AboutInfo />
         <OurTeam />
-
-        {/* <MyForm /> */}
-        
       </Container>
+      <Sustainability />
+      <OurClients />
+
       <Footer />
     </>
   );
