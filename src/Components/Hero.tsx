@@ -38,13 +38,13 @@ const Hero = () => {
             <Typography
               variant="h2"
               style={{
-                fontSize: "5rem",
+                fontSize: "4rem",
                 fontWeight: "bold",
                 marginBottom: "1.5rem",
                 textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
               }}
             >
-              Vision Got Larger
+              Building a More Sustainable Future
             </Typography>
           </div>
           <Typography
@@ -55,11 +55,7 @@ const Hero = () => {
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            porttitor accumsan tincidunt. Donec rutrum congue leo eget
-            malesuada. Nulla porttitor accumsan tincidunt. Donec rutrum congue
-            leo eget malesuada. Curabitur arcu erat, accumsan id imperdiet et,
-            porttitor at sem.
+            At Armadia, we provide modern and innovative construction solutions, committed to quality and excellence in all our projects. We help turn your vision into a sustainable reality through the latest engineering methods and advanced building materials. Together, we are building a better future for Cape Town.
           </Typography>
           <div style={{ display: "flex", gap: "1.5rem", paddingTop: "2rem" }}>
             <Button
