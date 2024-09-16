@@ -1,13 +1,13 @@
 import AllServices from "../../Components/AllServices";
 import Footer from "../../Components/Footer";
 import Hero from "../../Components/Hero";
-import OurTeam from "../../Components/OurTeam";
+// import OurTeam from "../../Components/OurTeam";
 import SuccessStats from "../../Components/SuccessStats";
 import { Box } from "@mui/material"; 
 import Sustainability from "../../Components/Sustainability";
-import AboutFounders from "../../Components/AboutFounders";
+// import AboutFounders from "../../Components/AboutFounders";
 import AllProjects from "../../Components/AllProjects";
-import Testimonials from "../../Components/Testimonials";
+// import Testimonials from "../../Components/Testimonials";
 
 const Home = () => {
   return (
@@ -26,14 +26,13 @@ const Home = () => {
       <AllServices />
       <AllProjects limit={4} title="Featured Projects" />
 
-      <AboutFounders />
+      {/* <AboutFounders /> */}
 
       <Sustainability />
       
-      <Testimonials />
 
 
-      <OurTeam />
+      {/* <OurTeam /> */}
       <Footer />
     </div>
   );
