@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 import Sustainability from "../../Components/Sustainability";
 // import AboutFounders from "../../Components/AboutFounders";
 import AllProjects from "../../Components/AllProjects";
+import RequestQuoteAndFAQ from "../../Components/RequestQuoteAndFAQ";
 // import Testimonials from "../../Components/Testimonials";
 
 const Home = () => {
@@ -30,7 +31,7 @@ const Home = () => {
 
       <Sustainability />
       
-
+      <RequestQuoteAndFAQ />
 
       {/* <OurTeam /> */}
       <Footer />
