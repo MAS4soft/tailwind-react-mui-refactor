@@ -1,5 +1,3 @@
-// src/Components/RequestQuote.tsx
-
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import {
@@ -13,6 +11,7 @@ import {
   Alert,
   Grid,
   useTheme,
+  FormControl
 } from "@mui/material";
 
 const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
@@ -43,32 +42,42 @@ const CustomTextField = ({
   multiline?: boolean;
   rows?: number;
   InputLabelProps?: object;
-}) => (
-  <TextField
-    name={name}
-    label={label}
-    variant='outlined'
-    fullWidth
-    margin='normal'
-    type={type}
-    value={value}
-    onChange={onChange}
-    onBlur={onBlur}
-    error={error}
-    multiline={multiline}
-    rows={rows}
-    InputLabelProps={InputLabelProps}
-    sx={{ bgcolor: 'white', borderRadius: 1 }}
-    InputProps={{
-      endAdornment: error ? (
-        <FormHelperText sx={{ color: 'error.main', bgcolor: 'transparent' }}>
-          {helperText}
-        </FormHelperText>
-      ) : null,
-    }}
-    {...rest}
-  />
-);
+}) => {
+  const theme = useTheme();
+
+  return (
+    <FormControl fullWidth margin='normal'>
+      <TextField
+        name={name}
+        label={label}
+        variant='outlined'
+        type={type}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        error={error}
+        multiline={multiline}
+        rows={rows}
+        InputLabelProps={{
+          sx: {
+            color: theme.palette.text.primary, // Change label color here
+            marginTop: 1, // Adjust label position here
+          },
+          ...InputLabelProps,
+        }}
+        sx={{ bgcolor: 'white', borderRadius: 1 }}
+        InputProps={{
+          endAdornment: error ? (
+            <FormHelperText sx={{ color: 'error.main', bgcolor: 'transparent' }}>
+              {helperText}
+            </FormHelperText>
+          ) : null,
+        }}
+        {...rest}
+      />
+    </FormControl>
+  );
+};
 
 const RequestQuote: React.FC = () => {
   const theme = useTheme();
@@ -147,7 +156,7 @@ const RequestQuote: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        bgcolor: theme.palette.secondary.main ,
+        bgcolor: theme.palette.secondary.main,
         p: 4,
         borderRadius: 1,
         color: theme.palette.common.white,
@@ -202,9 +211,6 @@ const RequestQuote: React.FC = () => {
           onBlur={() => handleBlur('name')}
           error={!!errors.name}
           helperText={errors.name}
-          InputLabelProps={{
-            sx: { color: theme.palette.text.secondary },
-          }}
         />
         <CustomTextField
           name='user_email'
@@ -215,9 +221,6 @@ const RequestQuote: React.FC = () => {
           onBlur={() => handleBlur('email')}
           error={!!errors.email}
           helperText={errors.email}
-          InputLabelProps={{
-            sx: { color: theme.palette.text.secondary },
-          }}
         />
         <CustomTextField
           name='user_phone'
@@ -228,9 +231,6 @@ const RequestQuote: React.FC = () => {
           onBlur={() => handleBlur('phone')}
           error={!!errors.phone}
           helperText={errors.phone}
-          InputLabelProps={{
-            sx: { color: theme.palette.text.secondary },
-          }}
         />
         <CustomTextField
           name='message'
@@ -242,9 +242,6 @@ const RequestQuote: React.FC = () => {
           onBlur={() => handleBlur('message')}
           error={!!errors.message}
           helperText={errors.message}
-          InputLabelProps={{
-            sx: { color: theme.palette.text.secondary },
-          }}
         />
         <Button
           variant='contained'
