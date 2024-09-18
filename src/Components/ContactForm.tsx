@@ -1,6 +1,7 @@
+// src\Components\ContactForm.tsx
 import { Container, Box, Typography } from "@mui/material";
-import Map from "./Map";
-import ContactDetails from "./ContactDetails";
+// import Map from "./Map";
+// import ContactDetails from "./ContactDetails";
 import Footer from "./Footer";
 import HeroAll from "./HeroAll";
 import RequestQuote from "./RequestQuote";
@@ -17,10 +18,10 @@ const ContactForm = () => {
           justifyContent="space-between"
         >
           <Box flex={1} ml={{ md: 2 }} mb={{ xs: 4, md: 0 }}>
-            <ContactDetails />
+            {/* <ContactDetails /> */}
           </Box>
           <Box flex={1} mr={{ md: 2 }} mb={{ xs: 4, md: 0 }}>
-            <Map />
+            {/* <Map /> */}
           </Box>
         </Box>
         <Box display="flex" justifyContent="center">
