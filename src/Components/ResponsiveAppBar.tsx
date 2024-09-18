@@ -18,11 +18,41 @@ const Logo = styled("img")(({ theme }) => ({
   },
 }));
 
+interface LogoTitleProps {
+  src: string;
+  alt: string;
+}
+
+const LogoTitle: React.FC<LogoTitleProps> = ({ src, alt }) => {
+  const theme = useTheme();
+  return (
+    <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Logo src={src} alt={alt} sx={{ mr: .5 }} />
+      <Typography
+        variant="h6"
+        noWrap
+        component="a"
+        href="/"
+        sx={{
+          fontFamily: "monospace",
+          fontWeight: 700,
+          letterSpacing: ".2rem",
+          color: theme.palette.common.white,
+          textDecoration: "none",
+          "&:hover": {
+            color: theme.palette.primary.main, 
+          },
+        }}
+      >
+        ARMADIA
+      </Typography>
+    </Box>
+  );
+};
+
 function ResponsiveAppBar() {
   const theme = useTheme();
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -34,11 +64,50 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+  const renderMenuItems = () => {
+    return pages.map((page) => (
+      <MenuItem key={page} onClick={handleCloseNavMenu}>
+        <Typography textAlign="center">
+          <Link
+            to={`/${page.toLowerCase().replace(/\s+/g, "")}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            {page}
+          </Link>
+        </Typography>
+      </MenuItem>
+    ));
+  };
+
+  const renderButtons = () => {
+    return pages.map((page) => (
+      <Button
+        key={page}
+        onClick={handleCloseNavMenu}
+        sx={{
+          my: 1,
+          color:
+            currentPath === `/${page.toLowerCase().replace(/\s+/g, "")}`
+              ? theme.palette.primary.main
+              : theme.palette.common.white,
+          display: "block",
+          "&:hover": {
+            color: theme.palette.primary.main,
+          },
+        }}
+        component={Link}
+        to={`/${page.toLowerCase().replace(/\s+/g, "")}`}
+      >
+        {page}
+      </Button>
+    ));
+  };
+
   return (
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor: "rgba(30, 41, 73, 0.5)",
         boxShadow: "none",
         py: 0.5,
         top: 0,
@@ -48,66 +117,21 @@ function ResponsiveAppBar() {
     >
       <Container>
         <Toolbar disableGutters>
-          <Box
-            sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
-          >
-            <Logo
-              src="src\assets\logo.jpg"
-              alt="Company Logo"
-              sx={{ mr: 2 }}
-            />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="#"
-              sx={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: theme.palette.primary.main,
-                textDecoration: "none",
-                pr: 4,
-                "&:hover": {
-                  color: theme.palette.common.white, 
-                },
-              }}
-            >
-              ARMADIA   
-            </Typography>
+          {/* Desktop View */}
+          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
+            <LogoTitle src="src/assets/logo.png" alt="Company Logo" />
           </Box>
 
+          {/* Mobile View */}
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
               alignItems: "center",
-              justifyContent: "flex-end", // Align to the right for mobile view
+              justifyContent: "flex-end",
             }}
           >
-            <Logo
-              src="https://img.freepik.com/free-vector/flat-design-construction-company-logo_23-2150051906.jpg"
-              alt="Company Logo"
-            />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="#"
-              sx={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: theme.palette.primary.main,
-                "&:hover": {
-                  color: theme.palette.common.white, // Apply hover color
-                },
-                textDecoration: "none",
-                ml: 2,
-              }}
-            >
-              ARMADIA
-            </Typography>
+            <LogoTitle src="src/assets/logo.png" alt="Company Logo" />
             <IconButton
               size="large"
               aria-label="menu"
@@ -119,7 +143,7 @@ function ResponsiveAppBar() {
                 ml: "auto",
                 color: { xs: "white", md: "inherit" },
                 "&:hover": {
-                  color: theme.palette.primary.main, // Apply hover color
+                  color: theme.palette.primary.main,
                 },
               }}
             >
@@ -149,57 +173,28 @@ function ResponsiveAppBar() {
                 },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link
-                      to={`/${page.toLowerCase().replace(/\s+/g, "")}`}
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      {page}
-                    </Link>
-                  </Typography>
-                </MenuItem>
-              ))}
+              {renderMenuItems()}
             </Menu>
           </Box>
 
+          {/* Desktop Buttons */}
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
               alignItems: "center",
-              justifyContent: "flex-start", // Align to the right
+              justifyContent: "center",
             }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color:
-                    currentPath === `/${page.toLowerCase().replace(/\s+/g, "")}`
-                      ? theme.palette.common.white
-                      : theme.palette.primary.main,
-                  display: "block",
-                  "&:hover": {
-                    color: theme.palette.common.white,
-                  },
-                }}
-                component={Link}
-                to={`/${page.toLowerCase().replace(/\s+/g, "")}`}
-              >
-                {page}
-              </Button>
-            ))}
+            {renderButtons()}
           </Box>
 
+          {/* Social Media Icons */}
           <Box
             sx={{
-              display: { xs: "none", sm: "none", md: "flex" }, // Show only on large screens
+              display: { xs: "none", sm: "none", md: "flex" },
               alignItems: "center",
-              ml: "auto", // Move to the right
+              ml: "auto",
             }}
           >
             <SocialMediaIcons />

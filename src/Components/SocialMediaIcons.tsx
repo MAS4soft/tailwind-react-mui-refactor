@@ -5,7 +5,7 @@ import SocialMediaLink from "./SocialMediaLink";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import XIcon from "@mui/icons-material/X";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Box, useTheme } from "@mui/material";
 
 const socialMediaLinks = [
@@ -15,12 +15,12 @@ const socialMediaLinks = [
     label: "Facebook",
   },
   {
-    href: "https://www.instagram.com/armadia.for.constractins",
+    href: "https://www.instagram.com/armadia.co.za",
     icon: <InstagramIcon />,
     label: "Instagram",
   },
-  { href: "https://x.com", icon: <XIcon />, label: "X" },
-  { href: "https://www.youtube.com", icon: <YouTubeIcon />, label: "YouTube" },
+  { href: "https://www.linkedin.com/company/armadiaza/", icon: <LinkedInIcon />, label: "LinkedIn" },
+  { href: "https://www.youtube.com/@armadiaza", icon: <YouTubeIcon />, label: "YouTube" },
 ];
 
 const SocialMediaIcons: React.FC = () => {
@@ -33,9 +33,9 @@ const SocialMediaIcons: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         "& .MuiSvgIcon-root": {
-          color: theme.palette.primary.main ,
+          color: theme.palette.common.white ,
           "&:hover": {
-            color: theme.palette.common.white, // Apply hover color
+            color: theme.palette.primary.main , // Apply hover color
           },
         },
       }}
