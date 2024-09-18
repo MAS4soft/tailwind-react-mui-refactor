@@ -253,7 +253,7 @@ const RequestQuote: React.FC = () => {
           type='submit'
           disabled={Object.values(errors).some(error => error !== '')}
         >
-          {!loading ? 'Send Message' : <CircularProgress size={20} />}
+          {!loading ? 'Send Message' : <CircularProgress size={20} color='secondary' />}
         </Button>
       </form>
     </Box>

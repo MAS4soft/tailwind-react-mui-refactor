@@ -25,11 +25,12 @@ const Footer = () => {
         >
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
-              Build With Urban Nest
+              Building Your Dreams with Excellence
             </Typography>
             <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque in ipsum id orci.
+              Transforming visions into reality with unparalleled expertise. Our
+              commitment to quality and service ensures that your project is in
+              capable hands.
             </Typography>
             <Typography variant="body2" sx={{ mt: 2 }}>
               Mon - Sat 8:00 - 17:30,
@@ -42,34 +43,44 @@ const Footer = () => {
             <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
               Our Services
             </Typography>
+            <Typography variant="body2">Historical Restorations </Typography>
+            <Typography variant="body2">Residential Construction</Typography>
+            <Typography variant="body2">Commercial Construction</Typography>
             <Typography variant="body2">
-              Chemical Engineering Projects
+              Renovations and Modifications
             </Typography>
             <Typography variant="body2">
-              Mining Engineering Construction
+              Interior and Exterior Decorations
             </Typography>
             <Typography variant="body2">
-              Engineering Welding Engineering
+              Green Spaces and Urban Landscaping
             </Typography>
-            <Typography variant="body2">Welding Engineering</Typography>
-            <Typography variant="body2">Space Program XYZ</Typography>
+            <Typography variant="body2">
+              Planning and Engineering Design
+            </Typography>
+            
+            <Typography variant="body2">
+              Sustainability and Green Building Services
+            </Typography>
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
-              Office in South Africa
+            Headquarters Office
             </Typography>
             <Typography variant="body2">
               4 Mountain View Rd, Bloemhof,
               <br />
               Tiger Valley, Cape Town 7530
+              <br />
+              South Africa
             </Typography>
             <br />
             <Typography variant="body2">(+27) 826-826-165</Typography>
-            <Typography variant="body2">(+20) 111-0052-444</Typography>
+            <Typography variant="body2">(+27) 660-041-063</Typography>
             <br />
             <Typography variant="body2">info@Armadia.com</Typography>
-            <Typography variant="body2">contact@Armadia.com</Typography>
+            {/* <Typography variant="body2">contact@Armadia.com</Typography> */}
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
@@ -82,7 +93,7 @@ const Footer = () => {
           </Grid>
         </Grid>
 
-<Divider sx={{ my: 4, backgroundColor: "#ffffff33",  }} />
+        <Divider sx={{ my: 4, backgroundColor: "#ffffff33" }} />
 
         <Grid
           container

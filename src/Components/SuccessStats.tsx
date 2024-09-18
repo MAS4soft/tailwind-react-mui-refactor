@@ -4,17 +4,16 @@ import { Box, Grid, Typography, Paper } from "@mui/material";
 const SuccessStats: React.FC = () => {
   return (
     <Box
-    sx={{
-      backgroundColor: "#FFC107",
-      padding: "0rem",
-      margin: "2rem auto",
-      maxWidth: { xs: "100%",  lg: "1200px", xl: "1400px" },
-      width: "100%",
-      maxhight: { xs: "100%",  lg: "1400px", xl: "1600px" },
-      hight: "100%",
-
-    }}
-  >
+      sx={{
+        backgroundColor: "#FFC107",
+        padding: "0rem",
+        margin: "2rem auto",
+        maxWidth: { xs: "100%", lg: "1200px", xl: "1400px" },
+        width: "100%",
+        maxhight: { xs: "100%", lg: "1400px", xl: "1600px" },
+        hight: "100%",
+      }}
+    >
       <Grid container spacing={0} sx={{ height: "100%" }}>
         <Grid
           item
@@ -32,9 +31,9 @@ const SuccessStats: React.FC = () => {
             component="div"
             gutterBottom
             align="left"
-            sx={{ fontWeight: "bold" }}
+            sx={{ fontWeight: "" }}
           >
-            Build Your Dream
+            Build Your Future with Excellence
           </Typography>
           <Typography
             variant="h3"
@@ -43,7 +42,7 @@ const SuccessStats: React.FC = () => {
             align="left"
             sx={{ fontWeight: "bold" }}
           >
-            25 Years Of Undefeated Success
+            15 Years of Proven Success
           </Typography>
           <Typography
             variant="body1"
@@ -52,18 +51,24 @@ const SuccessStats: React.FC = () => {
             align="left"
             sx={{ color: "#000" }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,
-            lacinia eget consectetur sed, convallis.
+            At Armadia Construction, we take pride in delivering high-quality
+            construction services in Cape Town, South Africa. With our extensive
+            experience spanning both Egypt and South Africa, we offer tailored
+            solutions that meet the unique needs of your projects. Let us help
+            turn your vision into reality with the highest standards of quality
+            and professionalism.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6} sx={{ padding: 0, margin: 0 }}>
           <Grid container spacing={0} sx={{ height: "100%" }}>
             {[
-              { title: "512+", subtitle: "Successfully Project Finished" },
-              { title: "25+", subtitle: "Years of experience with proud" },
-              { title: "1120+", subtitle: "Revenue in 2017 investment" },
-              { title: "1520+", subtitle: "Colleagues & counting more daily" },
+              {
+                title: "200+",
+                subtitle: "Projects Completed Across Continents",
+              },
+              { title: "15+", subtitle: "Years of experience with proud" },
+              { title: "10+", subtitle: "New Projects Initiated This Year" },
+              { title: "1000+", subtitle: "Satisfied Clients and Counting" },
             ].map((item, index) => (
               <Grid
                 item

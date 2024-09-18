@@ -14,7 +14,7 @@ import Sustainability from "../../Components/Sustainability";
 const AboutUs: React.FC = () => {
   return (
     <>
-      <HeroAll text="About" />
+      <HeroAll text="About Us" />
       <Container sx={{ py: 6 }}>
         <AboutInfo />
         {/* <OurTeam /> */}

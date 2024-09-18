@@ -1,14 +1,14 @@
 import { Box, Typography, Grid, Button } from "@mui/material";
 import { Business, HistoryEdu, HomeWork } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 const AboutInfo: React.FC = () => {
-  const navigate = useNavigate(); 
-  
+  const navigate = useNavigate();
+
   const handleServicesButtonClick = () => {
     navigate("/services");
   };
-  
+
   return (
     <Box sx={{ py: 2 }}>
       <Grid container spacing={4} alignItems="stretch">
@@ -24,17 +24,23 @@ const AboutInfo: React.FC = () => {
               About Us
             </Typography>
             <Typography variant="h3" fontWeight="bold" gutterBottom>
-              We Are Leading International Company In The World
+              Leading the Way in Construction Excellence
             </Typography>
             <Typography variant="body1" paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              At Armadia Construction, we are dedicated to redefining the
+              construction industry with our commitment to quality and
+              innovation. With expertise in residential, commercial, and
+              renovation projects, we strive to deliver outstanding results that
+              meet the highest standards.
             </Typography>
             <Typography variant="body1" paragraph>
-              Cras ultricies ligula sed magna dictum porta. Curabitur non nulla
-              sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit. Curabitur arcu erat,
-              accumsan id imperdiet et, porttitor at sem.
+              Our mission is to create spaces that enhance the lives of our
+              clients and contribute positively to the community. From initial
+              design to project completion, we leverage cutting-edge techniques
+              and sustainable practices to ensure every project is executed with
+              precision and excellence. Our experienced team works
+              collaboratively to bring your vision to life, ensuring timely
+              delivery and exceptional quality.{" "}
             </Typography>
             <Button
               variant="contained"
@@ -73,36 +79,48 @@ const AboutInfo: React.FC = () => {
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Business sx={{ fontSize: 40, color: "primary.main", mr: 2 }} />
               <Box>
+                <Typography variant="h5" fontWeight="bold">
+                  Building Staff
+                </Typography>
                 <Typography variant="h4" fontWeight="bold">
-                  Building Staffs
+                  Our Expert Team
                 </Typography>
                 <Typography variant="body1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis, pulvinar.
+                  At Armadia Construction, our skilled team of architects,
+                  engineers, and tradespeople ensures exceptional results
+                  through ongoing training and expertise.
                 </Typography>
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <HistoryEdu sx={{ fontSize: 40, color: "primary.main", mr: 2 }} />
               <Box>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   History Emphasis
                 </Typography>
+                <Typography variant="h4" fontWeight="bold">
+                  A Legacy of Excellence
+                </Typography>
                 <Typography variant="body1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis, pulvinar.
+                  With years of successful projects, Armadia Construction is
+                  known for its reliability and quality in residential,
+                  commercial, and renovation construction.
                 </Typography>
               </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <HomeWork sx={{ fontSize: 40, color: "primary.main", mr: 2 }} />
               <Box>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   Economic Outcomes
                 </Typography>
+                <Typography variant="h4" fontWeight="bold">
+                  Delivering Value
+                </Typography>
                 <Typography variant="body1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  elit tellus, luctus nec ullamcorper mattis, pulvinar.
+                  We focus on cost-effective solutions and efficient project
+                  management to provide maximum value and positive economic
+                  impact for our clients.
                 </Typography>
               </Box>
             </Box>

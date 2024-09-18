@@ -11,55 +11,55 @@ interface ProjectType {
 
 interface AllProjectsProps {
   limit?: number;
-  title?: string; // Ensure title is included here
+  title?: string; 
 }
 
 const projects: ProjectType[] = [
   {
     title: "Science Lab Building",
-    location: "New York, USA",
+    location: "Cairo, Egypt",
     image:
       "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img1-min.jpg",
   },
   {
     title: "Long Gate Bridge",
-    location: "Malmo, SE",
+    location: "Cairo, Egypt",
     image:
       "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img2-min.jpg",
   },
   {
     title: "Enix Lawyer Building",
-    location: "Toronto, CA",
+    location: "Cairo, Egypt",
     image:
       "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img3-min.jpg",
   },
   {
     title: "Deep Sea Bridge",
-    location: "Athens, GR",
+    location: "Cairo, Egypt",
     image:
       "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img4-min.jpg",
   },
   {
     title: "Science Lab Building 2",
-    location: "New York, USA",
+    location: "Cairo, Egypt",
     image:
       "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img-5.jpg",
   },
   {
     title: "Long Gate Bridge 2",
-    location: "Malmo, SE",
+    location: "Cairo, Egypt",
     image:
       "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img-6.jpg",
   },
   {
     title: "Long Gate Bridge 2",
-    location: "Malmo, SE",
+    location: "Cairo, Egypt",
     image:
       "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img-7.jpg",
   },
   {
     title: "Long Gate Bridge 2",
-    location: "Malmo, SE",
+    location: "Cairo, Egypt",
     image:
       "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img-8.jpg",
   },

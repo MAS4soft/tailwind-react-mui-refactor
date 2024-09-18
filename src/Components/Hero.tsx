@@ -55,7 +55,11 @@ const Hero = () => {
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
             }}
           >
-            At Armadia, we provide modern and innovative construction solutions, committed to quality and excellence in all our projects. We help turn your vision into a sustainable reality through the latest engineering methods and advanced building materials. Together, we are building a better future for Cape Town.
+            At Armadia, we provide modern and innovative construction solutions,
+            committed to quality and excellence in all our projects. We help
+            turn your vision into a sustainable reality through the latest
+            engineering methods and advanced building materials. Together, we
+            are building a better future for all.
           </Typography>
           <div style={{ display: "flex", gap: "1.5rem", paddingTop: "2rem" }}>
             <Button
