@@ -3,6 +3,7 @@ import SocialMediaIcons from "./SocialMediaIcons";
 import { useState } from "react";
 import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, styled, Toolbar, Typography, useTheme } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
+import logo from "../assets/logo.png"
 
 const pages = ["Home", "Services", "Projects", "About", "Contact Us"];
 
@@ -119,7 +120,7 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           {/* Desktop View */}
           <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
-            <LogoTitle src="src/assets/logo.png" alt="Company Logo" />
+            <LogoTitle src={logo} alt="Company Logo" />
           </Box>
 
           {/* Mobile View */}
@@ -131,7 +132,7 @@ function ResponsiveAppBar() {
               justifyContent: "flex-end",
             }}
           >
-            <LogoTitle src="src/assets/logo.png" alt="Company Logo" />
+            <LogoTitle src={logo} alt="Company Logo" />
             <IconButton
               size="large"
               aria-label="menu"
