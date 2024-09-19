@@ -17,9 +17,24 @@ const Home = () => {
       <Box
         sx={{
           position: "relative",
-          top: "-14rem", // Adjust as needed to position SuccessStats
           zIndex: 2, // Ensure it appears above Hero
-          marginBottom: "-12rem", // Space below SuccessStats
+          // Default values for screens between 600px and 1024px
+          top: "-2rem",
+          marginBottom: "-2rem",
+          // Apply different values for large screens
+          '@media (min-width: 1024px)': {
+            top: "-14rem", // Adjust as needed to position SuccessStats
+            marginBottom: "-12rem", // Space below SuccessStats
+          },
+          // Apply different values for small screens
+          '@media (max-width: 600px)': {
+            top: "-14rem",
+            marginBottom: "-10rem",
+          },
+          '@media (max-width: 400px)': {
+            top: "-2rem",
+            marginBottom: "-2rem",
+          },
         }}
       >
         <SuccessStats />

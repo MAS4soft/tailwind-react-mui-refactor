@@ -8,7 +8,6 @@ body {
 .container {
   padding-top: 40px; /* Adjust based on the height of your AppBar */
 }
-
 .hero {
   position: relative;
   background: url("/src/assets/cover.jpg") no-repeat center center;
@@ -17,10 +16,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start; /* Align to the left */
-  padding-top: 20px; /* Adjust based on the height of your AppBar */
-  margin-top: -8rem; /* Adjust if necessary to position SuccessStats */
 }
 
+/* Apply padding and margin on large screens */
+@media (min-width: 1200px) {
+  .hero {
+    padding-top: 20px; /* Adjust based on the height of your AppBar */
+    margin-top: -8rem; /* Adjust if necessary to position SuccessStats */
+  }
+}
+
+/* Apply padding and margin on small screens */
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 20px; /* Adjust based on the height of your AppBar */
+    margin-top: -8rem; /* Adjust if necessary to position SuccessStats */
+  }
+}
 
 .hero-content {
   position: relative;
