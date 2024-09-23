@@ -25,8 +25,11 @@ const Hero = () => {
           <div style={{ paddingTop: "4rem" }}>
             <Typography
               variant="h1"
-              style={{
-                fontSize: "2rem",
+              sx={{
+                fontSize: {
+                  xs: "1.5rem",  // Small screens
+                  sm: "2rem",    // Medium screens and up
+                },
                 fontWeight: "bold",
                 color: "#FFD700",
                 marginBottom: "1rem",
@@ -37,8 +40,11 @@ const Hero = () => {
             </Typography>
             <Typography
               variant="h2"
-              style={{
-                fontSize: "4rem",
+              sx={{
+                fontSize: {
+                  xs: "2.5rem",  // Small screens
+                  sm: "4rem",    // Medium screens and up
+                },
                 fontWeight: "bold",
                 marginBottom: "1.5rem",
                 textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
@@ -49,10 +55,17 @@ const Hero = () => {
           </div>
           <Typography
             variant="body1"
-            style={{
-              width: "70%",
+            sx={{
+              width: {
+                xs: "90%",    // Small screens
+                sm: "70%",    // Medium screens and up
+              },
               marginBottom: "2rem",
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+              fontSize: {
+                xs: "0.875rem",  // Small screens
+                sm: "1rem",      // Medium screens and up
+              },
             }}
           >
             At Armadia, we provide modern and innovative construction solutions,
@@ -67,8 +80,14 @@ const Hero = () => {
               sx={{
                 bgcolor: "#FFC107",
                 color: "#000",
-                fontSize: "1.2rem",
-                padding: "0.75rem 1.5rem",
+                fontSize: {
+                  xs: "0.875rem",  // Small screens
+                  sm: "1.2rem",    // Medium screens and up
+                },
+                padding: {
+                  xs: "0.5rem 1rem",  // Small screens
+                  sm: "0.75rem 1.5rem", // Medium screens and up
+                },
                 borderRadius: "0",
                 "&:hover": {
                   bgcolor: "#FFEA00",
@@ -84,8 +103,14 @@ const Hero = () => {
                 bgcolor: "transparent",
                 color: "#FFF",
                 border: "2px solid #FFF",
-                fontSize: "1.2rem",
-                padding: "0.75rem 1.5rem",
+                fontSize: {
+                  xs: "0.875rem",  // Small screens
+                  sm: "1.2rem",    // Medium screens and up
+                },
+                padding: {
+                  xs: "0.5rem 1rem",  // Small screens
+                  sm: "0.75rem 1.5rem", // Medium screens and up
+                },
                 borderRadius: "0",
                 "&:hover": {
                   bgcolor: "#FFEA00",

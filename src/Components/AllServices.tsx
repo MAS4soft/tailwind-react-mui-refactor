@@ -46,14 +46,15 @@ const AllServices = () => {
     {
       id: 5,
       image: service05,
-      title: "Historical Restorations",
-      description: "Restoring historical buildings while preserving their original architectural character.",
+      title: "Green Spaces and Urban Landscaping",
+      description: "Creating gardens, landscaping, and urban areas around buildings.",
     },
+    
     {
       id: 6,
       image: service06,
-      title: "Green Spaces and Urban Landscaping",
-      description: "Creating gardens, landscaping, and urban areas around buildings.",
+      title: "Historical Restorations",
+      description: "Restoring historical buildings while preserving their original architectural character.",
     },
   ];
 

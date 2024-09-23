@@ -27,7 +27,7 @@ const Sustainability: React.FC = () => {
           sx={{
             position: "relative",
             backgroundImage:
-              "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(src/assets/cons06.jpg)",
+              "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(src/assets/Project05.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             padding: theme.spacing(4),
@@ -78,7 +78,7 @@ const Sustainability: React.FC = () => {
           md={6}
           sx={{
             backgroundImage:
-              "linear-gradient( rgba(255, 193, 7, 0.9), rgba(255, 193, 7, 0.9)), url(src/assets/cons06.jpg)",
+              "linear-gradient( rgba(255, 193, 7, 0.9), rgba(255, 193, 7, 0.9)), url(src/assets/Project05.jpg)",
             padding: theme.spacing(4),
             display: "flex",
             alignItems: "center",

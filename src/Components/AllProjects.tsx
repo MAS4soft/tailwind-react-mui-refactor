@@ -3,6 +3,15 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Project from "./Project";
 
+import Project01 from "../assets/Project01.jpg";
+import Project02 from "../assets/Project02.jpg";
+import Project03 from "../assets/Project03.jpg";
+import Project04 from "../assets/Project04.jpg";
+import Project05 from "../assets/Project05.jpg";
+import Project06 from "../assets/Project06.jpg";
+import Project07 from "../assets/Project07.jpg";
+import Project08 from "../assets/Project08.jpg";
+
 interface ProjectType {
   title: string;
   location: string;
@@ -11,57 +20,49 @@ interface ProjectType {
 
 interface AllProjectsProps {
   limit?: number;
-  title?: string; 
+  title?: string;
 }
 
 const projects: ProjectType[] = [
   {
-    title: "Science Lab Building",
-    location: "Cairo, Egypt",
-    image:
-      "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img1-min.jpg",
+    title: "Milnerton Villa",
+    location: "Cape Town, South Africa",
+    image: Project01,
   },
   {
-    title: "Long Gate Bridge",
-    location: "Cairo, Egypt",
-    image:
-      "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img2-min.jpg",
+    title: "Saudi Arabia Consulate",
+    location: "Giza, Egypt",
+    image: Project02,
   },
   {
-    title: "Enix Lawyer Building",
-    location: "Cairo, Egypt",
-    image:
-      "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img3-min.jpg",
+    title: "Banafsig Villa",
+    location: "New Cairo, Egypt",
+    image: Project03,
   },
   {
-    title: "Deep Sea Bridge",
-    location: "Cairo, Egypt",
-    image:
-      "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img4-min.jpg",
+    title: "El-Ahly Club",
+    location: "Nasr City, Egypt",
+    image: Project04,
+},
+  {
+    title: "Lake View",
+    location: "Garden City, Egypt",
+    image: Project05,
+},
+  {
+    title: "SA Ambassador villa",
+    location: "Zamalek, Egypt",
+    image: Project06,
   },
   {
-    title: "Science Lab Building 2",
-    location: "Cairo, Egypt",
-    image:
-      "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img-5.jpg",
+    title: "Villa Gardens",
+    location: "Fifth Satelment, Egypt",
+    image: Project07,
   },
   {
-    title: "Long Gate Bridge 2",
-    location: "Cairo, Egypt",
-    image:
-      "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img-6.jpg",
-  },
-  {
-    title: "Long Gate Bridge 2",
-    location: "Cairo, Egypt",
-    image:
-      "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img-7.jpg",
-  },
-  {
-    title: "Long Gate Bridge 2",
-    location: "Cairo, Egypt",
-    image:
-      "https://websitedemos.net/construction-company-02/wp-content/uploads/sites/977/2021/11/img-8.jpg",
+    title: "Lake Side building",
+    location: "New Capital, Egypt",
+    image: Project08,
   },
 ];
 

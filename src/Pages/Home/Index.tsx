@@ -40,11 +40,13 @@ const Home = () => {
         <SuccessStats />
       </Box>
       <AllServices />
+
+      <Sustainability />
+
       <AllProjects limit={4} title="Featured Projects" />
 
       {/* <AboutFounders /> */}
 
-      <Sustainability />
       
       <RequestQuoteAndFAQ />
 
