@@ -5,6 +5,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ComputerIcon from "@mui/icons-material/Computer";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import { useNavigate } from "react-router-dom";
+import Project05 from "../assets/Project05.jpg"; // استيراد الصورة
 
 const Sustainability: React.FC = () => {
   const theme = useTheme();
@@ -26,8 +27,7 @@ const Sustainability: React.FC = () => {
           md={6}
           sx={{
             position: "relative",
-            backgroundImage:
-              "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(src/assets/Project05.jpg)",
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Project05})`, // استخدام الصورة المستوردة هنا
             backgroundSize: "cover",
             backgroundPosition: "center",
             padding: theme.spacing(4),
@@ -77,8 +77,7 @@ const Sustainability: React.FC = () => {
           xs={12}
           md={6}
           sx={{
-            backgroundImage:
-              "linear-gradient( rgba(255, 193, 7, 0.9), rgba(255, 193, 7, 0.9)), url(src/assets/Project05.jpg)",
+            backgroundImage: `linear-gradient( rgba(255, 193, 7, 0.9), rgba(255, 193, 7, 0.9)), url(${Project05})`, // استخدام الصورة المستوردة هنا أيضًا
             padding: theme.spacing(4),
             display: "flex",
             alignItems: "center",

@@ -1,4 +1,3 @@
-// src\Components\Project.tsx
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 
 interface ProjectProps {
@@ -11,7 +10,13 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = ({ project }) => {
   return (
-    <Card sx={{ borderRadius: 0, boxShadow: 'none', position: 'relative' }}>
+    <Card sx={{ 
+      borderRadius: 0, 
+      boxShadow: 'none', 
+      position: 'relative', 
+      border: '1px solid rgba(255, 255, 255, 0.3)',  // Transparent border
+      boxSizing: 'border-box'  // Ensure the border is included in the element's total width/height
+    }}>
       <CardMedia
         component="img"
         image={project.image}

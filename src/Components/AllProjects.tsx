@@ -30,7 +30,7 @@ const projects: ProjectType[] = [
     image: Project01,
   },
   {
-    title: "Saudi Arabia Consulate",
+    title: "SA Heritage villa",
     location: "Giza, Egypt",
     image: Project02,
   },
@@ -50,7 +50,7 @@ const projects: ProjectType[] = [
     image: Project05,
 },
   {
-    title: "SA Ambassador villa",
+    title: "SA Heritage villa",
     location: "Zamalek, Egypt",
     image: Project06,
   },
