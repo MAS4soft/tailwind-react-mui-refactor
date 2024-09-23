@@ -33,9 +33,9 @@ const Footer = () => {
               capable hands.
             </Typography>
             <Typography variant="body2" sx={{ mt: 2 }}>
-              Mon - Sat 8:00 - 17:30,
+              Mon - Fri   8:00 - 16:00,
               <br />
-              Sunday - CLOSED
+               Sat - Sun : CLOSED
             </Typography>
           </Grid>
 
@@ -79,7 +79,7 @@ const Footer = () => {
             <Typography variant="body2">(+27) 826-826-165</Typography>
             <Typography variant="body2">(+27) 660-041-063</Typography>
             <br />
-            <Typography variant="body2">info@Armadia.com</Typography>
+            <Typography variant="body2">info@Armadia.co.za</Typography>
             {/* <Typography variant="body2">contact@Armadia.com</Typography> */}
           </Grid>
 

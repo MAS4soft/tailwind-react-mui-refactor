@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Project from "./Project";
-import { projects } from "../Components/projects"; 
+import { projects } from "./projectsData";
 
 interface AllProjectsProps {
   limit?: number;
@@ -19,8 +19,8 @@ const AllProjectsSlider: React.FC<AllProjectsProps> = ({ limit = 8 }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplay: true,          // تفعيل التحريك التلقائي
-    autoplaySpeed: 3000,    // تعيين الوقت بين الحركات (3 ثوانٍ)
+    autoplay: true, // تفعيل التحريك التلقائي
+    autoplaySpeed: 3000, // تعيين الوقت بين الحركات (3 ثوانٍ)
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
@@ -45,7 +45,7 @@ const AllProjectsSlider: React.FC<AllProjectsProps> = ({ limit = 8 }) => {
   };
 
   return (
-    <Box sx={{ width: '100%', py: 8, textAlign: 'center' }}>
+    <Box sx={{ width: "100%", py: 8, textAlign: "center" }}>
       <Typography variant="h4" color="text.primary" gutterBottom>
         Our Projects
       </Typography>

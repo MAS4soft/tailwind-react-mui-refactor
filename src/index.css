@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  padding-top: 40px; /* Adjust based on the height of your AppBar */
+  padding-top: 40px; 
 }
 
 .hero {
@@ -99,7 +99,7 @@ body {
 /* Adjust heroAll for small screens */
 @media (max-width: 600px) {
   .heroAll {
-    background-size: contain; /* Use contain for smaller screens */
+    /* background-size: contain; Use contain for smaller screens */
     height: 30vh; /* Adjust height for smaller screens */
   }
 }
