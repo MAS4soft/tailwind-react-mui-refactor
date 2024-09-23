@@ -24,8 +24,8 @@ const AllProjectsSlider: React.FC<AllProjectsProps> = ({ limit = 8 }) => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    prevArrow: <div style={{ fontSize: "30px", color: "#000" }}>←</div>,
-    nextArrow: <div style={{ fontSize: "30px", color: "#000" }}>→</div>,
+    // prevArrow: <div style={{ fontSize: "30px", color: "#000" }}>←</div>,
+    // nextArrow: <div style={{ fontSize: "30px", color: "#000" }}>→</div>,
     responsive: [
       {
         breakpoint: 1024,

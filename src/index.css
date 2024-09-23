@@ -8,6 +8,7 @@ body {
 .container {
   padding-top: 40px; /* Adjust based on the height of your AppBar */
 }
+
 .hero {
   position: relative;
   background: url("/src/assets/cover.jpg") no-repeat center center;
@@ -33,6 +34,16 @@ body {
     margin-top: -8rem; /* Adjust if necessary to position SuccessStats */
   }
 }
+
+
+/* Adjust heroAll for small screens */
+@media (max-width: 600px) {
+  .hero {
+    /* background-size: contain; Use contain for smaller screens */
+    height: 110vh; /* Adjust height for smaller screens */
+  }
+}
+
 
 .hero-content {
   position: relative;
@@ -60,8 +71,8 @@ body {
 .heroAll {
   position: relative;
   background: url("/src/assets/HeroAllCover02.jpg") no-repeat center center;
-  background-size: cover;
-  height: 60vh; /* Make the background shorter */
+  background-size: cover; /* Ensure the background covers the entire section */
+  height: 60vh; /* Adjusted height for larger screens */
   display: flex;
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
@@ -85,10 +96,10 @@ body {
   color: #fff;
 }
 
-.heroAll-text {
-  font-size: 4rem; /* Increase text size */
-  font-weight: bold;
-  color: #fff; /* Ensure text color is white */
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Add text shadow for better readability */
+/* Adjust heroAll for small screens */
+@media (max-width: 600px) {
+  .heroAll {
+    background-size: contain; /* Use contain for smaller screens */
+    height: 30vh; /* Adjust height for smaller screens */
+  }
 }

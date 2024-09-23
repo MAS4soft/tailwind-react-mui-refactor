@@ -12,13 +12,15 @@ const HeroAll: React.FC<HeroAllProps> = ({ text }) => {
         <div style={{ display: "flex", flexDirection: "column", color: "#fff" }}>
           <div style={{ paddingTop: "2rem" }}>
             <Typography
-              variant="h1"
-              style={{
-                fontSize: "6rem", 
-                fontWeight: "bold",
-                color: "#fff", 
-                marginBottom: "1rem",
-                textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+              variant="h1" 
+              sx={{
+                fontSize: {
+                  xl: '10rem',
+                  l: '8rem',
+                  m: '6rem',
+                  xs: '3rem', 
+                  sm: '4rem'  
+                }
               }}
             >
               {text}
