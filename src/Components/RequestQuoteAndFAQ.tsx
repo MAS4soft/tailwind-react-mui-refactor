@@ -10,7 +10,7 @@ const RequestQuoteAndFAQ = () => {
       display="flex"
       flexDirection={{ xs: "column", md: "row" }}
       alignItems="center"
-      justifyContent="center"
+        justifyContent="center"
     >
       <Box
         width={{ xs: "100%", md: "48%" }}

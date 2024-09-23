@@ -6,8 +6,9 @@ import SuccessStats from "../../Components/SuccessStats";
 import { Box } from "@mui/material"; 
 import Sustainability from "../../Components/Sustainability";
 // import AboutFounders from "../../Components/AboutFounders";
-import AllProjects from "../../Components/AllProjects";
+// import AllProjects from "../../Components/AllProjects";
 import RequestQuoteAndFAQ from "../../Components/RequestQuoteAndFAQ";
+import AllProjectsSlider from "../../Components/AllProjectsSlider";
 // import Testimonials from "../../Components/Testimonials";
 
 const Home = () => {
@@ -39,11 +40,14 @@ const Home = () => {
       >
         <SuccessStats />
       </Box>
+    
       <AllServices />
 
       <Sustainability />
 
-      <AllProjects limit={4} title="Featured Projects" />
+      <AllProjectsSlider />
+
+      {/* <AllProjects limit={4} title="Featured Projects" /> */}
 
       {/* <AboutFounders /> */}
 
