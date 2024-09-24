@@ -1,11 +1,10 @@
-// src/Components/SocialMediaIcons.tsx
-
 import React from "react";
 import SocialMediaLink from "./SocialMediaLink";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"; // Import WhatsApp icon
 import { Box, useTheme } from "@mui/material";
 
 const socialMediaLinks = [
@@ -21,6 +20,11 @@ const socialMediaLinks = [
   },
   { href: "https://www.linkedin.com/company/armadiaza/", icon: <LinkedInIcon />, label: "LinkedIn" },
   { href: "https://www.youtube.com/@armadiaza", icon: <YouTubeIcon />, label: "YouTube" },
+  {
+    href: "https://wa.me/27660041063", // WhatsApp link with the provided number
+    icon: <WhatsAppIcon />, // WhatsApp icon
+    label: "WhatsApp",
+  },
 ];
 
 const SocialMediaIcons: React.FC = () => {
@@ -33,9 +37,9 @@ const SocialMediaIcons: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         "& .MuiSvgIcon-root": {
-          color: theme.palette.common.white ,
+          color: theme.palette.common.white,
           "&:hover": {
-            color: theme.palette.primary.main , // Apply hover color
+            color: theme.palette.primary.main, // Apply hover color
           },
         },
       }}
