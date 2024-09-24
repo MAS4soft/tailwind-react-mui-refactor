@@ -1,5 +1,3 @@
-// src/Components/AllProjects.tsx
-
 import { Box, Grid } from "@mui/material";
 import Project from "./Project";
 import { projects } from "./projectsData"; 
@@ -7,15 +5,16 @@ import TitleDetails from "./TitleDetails";
 
 interface AllProjectsProps {
   limit?: number;
+  title?: string;  // أضفنا خاصية title هنا
 }
 
-const AllProjects: React.FC<AllProjectsProps> = ({ limit = 4 }) => {
+const AllProjects: React.FC<AllProjectsProps> = ({ limit = 4, title }) => {
   const displayedProjects = projects.slice(0, limit);
 
   return (
-    <Box >
+    <Box>
       <TitleDetails 
-        title="Our Projects" 
+        title={title || "Our Projects"}  // نستخدم الخاصية title الممررة، أو القيمة الافتراضية
         subtitle="Latest Works" 
       />
       <Grid container spacing={0} sx={{ px: 0 }}>

@@ -10,7 +10,7 @@ import { Box, useTheme } from "@mui/material";
 
 const socialMediaLinks = [
   {
-    href: "https://www.facebook.com/profile.php?id=61564297616824",
+    href: "https://www.facebook.com/armadia.co.za",
     icon: <FacebookIcon />,
     label: "Facebook",
   },
