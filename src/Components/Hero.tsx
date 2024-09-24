@@ -1,5 +1,6 @@
-import { Typography, Button, Container } from "@mui/material";
+import { Typography, Container } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import HeroButton from "./HeroButton";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -75,53 +76,23 @@ const Hero = () => {
             are building a better future for all.
           </Typography>
           <div style={{ display: "flex", gap: "1.5rem", paddingTop: "2rem" }}>
-            <Button
+            <HeroButton
+              label="Our Services"
               variant="contained"
-              sx={{
-                bgcolor: "#FFC107",
-                color: "#000",
-                fontSize: {
-                  xs: "0.875rem",  // Small screens
-                  sm: "1.2rem",    // Medium screens and up
-                },
-                padding: {
-                  xs: "0.5rem 1rem",  // Small screens
-                  sm: "0.75rem 1.5rem", // Medium screens and up
-                },
-                borderRadius: "0",
-                "&:hover": {
-                  bgcolor: "#FFEA00",
-                },
-              }}
               onClick={handleServicesButtonClick}
-            >
-              Our Services
-            </Button>
-            <Button
+              bgColor="#FFC107"
+              textColor="#000"
+              hoverBgColor="#FFEA00"
+            />
+            <HeroButton
+              label="Contact Us"
               variant="outlined"
-              sx={{
-                bgcolor: "transparent",
-                color: "#FFF",
-                border: "2px solid #FFF",
-                fontSize: {
-                  xs: "0.875rem",  // Small screens
-                  sm: "1.2rem",    // Medium screens and up
-                },
-                padding: {
-                  xs: "0.5rem 1rem",  // Small screens
-                  sm: "0.75rem 1.5rem", // Medium screens and up
-                },
-                borderRadius: "0",
-                "&:hover": {
-                  bgcolor: "#FFEA00",
-                  color: "#000",
-                  border: "2px solid #000",
-                },
-              }}
               onClick={handleContactButtonClick}
-            >
-              Contact Us
-            </Button>
+              borderColor="#FFF"
+              textColor="#FFF"
+              hoverBgColor="#FFEA00"
+              hoverTextColor="#000"
+            />
           </div>
         </div>
       </Container>

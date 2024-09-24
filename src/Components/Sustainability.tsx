@@ -1,15 +1,15 @@
 import React from "react";
-import { Box, Button, Typography, Grid, useTheme } from "@mui/material";
+import { Box, Typography, Grid, useTheme } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ComputerIcon from "@mui/icons-material/Computer";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import { useNavigate } from "react-router-dom";
-import Project05 from "../assets/Project05.jpg"; // استيراد الصورة
+import Project05 from "../assets/Project05.jpg"; // Importing the image
+import HeroButton from "./HeroButton"; // Import the reusable button component
 
 const Sustainability: React.FC = () => {
   const theme = useTheme();
-
   const navigate = useNavigate();
 
   const handleContactButtonClick = () => {
@@ -27,7 +27,7 @@ const Sustainability: React.FC = () => {
           md={6}
           sx={{
             position: "relative",
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Project05})`, // استخدام الصورة المستوردة هنا
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Project05})`, // Using the imported image
             backgroundSize: "cover",
             backgroundPosition: "center",
             padding: theme.spacing(4),
@@ -51,25 +51,17 @@ const Sustainability: React.FC = () => {
               eco-friendly practices into all our projects, ensuring healthier
               environments and safer spaces for our clients and community.
             </Typography>
-            <Button
+
+            {/* Using the reusable HeroButton component */}
+            <HeroButton
+              label="GET IN TOUCH"
               variant="outlined"
-              sx={{
-                bgcolor: "transparent",
-                color: "#FFF",
-                border: "2px solid #FFF",
-                fontSize: "1.2rem",
-                padding: "0.75rem 1.5rem",
-                borderRadius: "0",
-                "&:hover": {
-                  bgcolor: "#FFEA00",
-                  color: "#000",
-                  border: "2px solid #000",
-                },
-              }}
               onClick={handleContactButtonClick}
-            >
-              GET IN TOUCH
-            </Button>
+              textColor="#FFF"
+              borderColor="#FFF"
+              hoverBgColor="#FFEA00"
+              hoverTextColor="#000"
+            />
           </Box>
         </Grid>
         <Grid
@@ -77,7 +69,7 @@ const Sustainability: React.FC = () => {
           xs={12}
           md={6}
           sx={{
-            backgroundImage: `linear-gradient( rgba(255, 193, 7, 0.9), rgba(255, 193, 7, 0.9)), url(${Project05})`, // استخدام الصورة المستوردة هنا أيضًا
+            backgroundImage: `linear-gradient( rgba(255, 193, 7, 0.9), rgba(255, 193, 7, 0.9)), url(${Project05})`, // Using the imported image again
             padding: theme.spacing(4),
             display: "flex",
             alignItems: "center",
