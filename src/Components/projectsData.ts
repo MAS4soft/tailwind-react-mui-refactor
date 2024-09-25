@@ -22,7 +22,7 @@ export const projects: ProjectType[] = [
     image: Project01,
   },
   {
-    title: "SA Heritage villa",
+    title: "SA Heritage Palace",
     location: "Giza, Egypt",
     image: Project02,
   },

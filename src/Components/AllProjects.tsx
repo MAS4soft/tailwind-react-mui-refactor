@@ -5,7 +5,7 @@ import TitleDetails from "./TitleDetails";
 
 interface AllProjectsProps {
   limit?: number;
-  title?: string;  // أضفنا خاصية title هنا
+  title?: string; 
 }
 
 const AllProjects: React.FC<AllProjectsProps> = ({ limit = 4, title }) => {
@@ -14,7 +14,7 @@ const AllProjects: React.FC<AllProjectsProps> = ({ limit = 4, title }) => {
   return (
     <Box>
       <TitleDetails 
-        title={title || "Our Projects"}  // نستخدم الخاصية title الممررة، أو القيمة الافتراضية
+        title={title || "Our Projects"}  
         subtitle="Latest Works" 
       />
       <Grid container spacing={0} sx={{ px: 0 }}>

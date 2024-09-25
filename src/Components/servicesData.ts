@@ -52,7 +52,7 @@ export const services: ServiceType[] = [
   {
     id: 6,
     image: service06,
-    title: "Historical Restorations",
+    title: "Heritage Restorations",
     description: "Restoring historical buildings while preserving their original architectural character.",
   },
 ];
