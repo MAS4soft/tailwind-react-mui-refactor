@@ -5,8 +5,16 @@ body {
   background-size: cover;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+img, .container, .hero, .heroAll {
+  max-width: 100%;
+}
+
 .container {
-  padding-top: 40px; 
+  padding-top: 40px;
 }
 
 .hero {
@@ -35,7 +43,6 @@ body {
   }
 }
 
-
 /* Adjust heroAll for small screens */
 @media (max-width: 600px) {
   .hero {
@@ -43,7 +50,6 @@ body {
     height: 110vh; /* Adjust height for smaller screens */
   }
 }
-
 
 .hero-content {
   position: relative;
