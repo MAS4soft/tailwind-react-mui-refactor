@@ -17,7 +17,7 @@ function Projects() {
   return (
     <div>
       <HeroAll text="Projects" />
-      <AllProjects limit={8} title="Featured Projects" />
+      <AllProjects limit={12} title="Featured Projects" />
 
       {/* Contact Us Button before the Footer */}
       <Box sx={{ display: "flex", justifyContent: "center", padding: "2rem 0" }}>

@@ -12,7 +12,7 @@ interface AllProjectsProps {
   limit?: number;
 }
 
-const AllProjectsSlider: React.FC<AllProjectsProps> = ({ limit = 8 }) => {
+const AllProjectsSlider: React.FC<AllProjectsProps> = ({ limit = 12 }) => {
   const displayedProjects = projects.slice(0, limit);
 
   const settings = {

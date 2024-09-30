@@ -53,10 +53,10 @@ const SuccessStats: React.FC = () => {
           >
             At Armadia Construction, we take pride in delivering high-quality
             construction services in Cape Town, South Africa. With our extensive
-            experience spanning both Egypt and South Africa, we offer tailored
-            solutions that meet the unique needs of your projects. Let us help
-            turn your vision into reality with the highest standards of quality
-            and professionalism.
+            experience spanning the Middle East, Gulf region, and South Africa,
+            we offer tailored solutions that meet the unique needs of your
+            projects. Let us help turn your vision into reality with the highest
+            standards of quality and professionalism.
           </Typography>
         </Grid>
         <Grid item xs={12} md={6} sx={{ padding: 0, margin: 0 }}>

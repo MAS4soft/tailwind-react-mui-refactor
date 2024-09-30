@@ -33,9 +33,9 @@ const Footer = () => {
               capable hands.
             </Typography>
             <Typography variant="body2" sx={{ mt: 2 }}>
-              Mon - Fri   8:00 - 16:00,
+              Mon - Fri 8:00 - 16:00,
               <br />
-               Sat - Sun : CLOSED
+              Sat - Sun : CLOSED
             </Typography>
           </Grid>
 
@@ -43,30 +43,26 @@ const Footer = () => {
             <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
               Our Services
             </Typography>
-            <Typography variant="body2">Historical Restorations </Typography>
             <Typography variant="body2">Residential Construction</Typography>
             <Typography variant="body2">Commercial Construction</Typography>
+            <Typography variant="body2">
+              Interior and Exterior Designs
+            </Typography>
             <Typography variant="body2">
               Renovations and Modifications
             </Typography>
             <Typography variant="body2">
-              Interior and Exterior Decorations
+              Planning and Engineering Design
             </Typography>
             <Typography variant="body2">
               Green Spaces and Urban Landscaping
             </Typography>
-            <Typography variant="body2">
-              Planning and Engineering Design
-            </Typography>
-            
-            <Typography variant="body2">
-              Sustainability and Green Building Services
-            </Typography>
+            <Typography variant="body2">Heritage Restorations </Typography>
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
-            Headquarters Office
+              Headquarters Office
             </Typography>
             <Typography variant="body2">
               4 Mountain View Rd, Bloemhof,

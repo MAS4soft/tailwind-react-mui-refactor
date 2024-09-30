@@ -39,7 +39,7 @@ export const services: ServiceType[] = [
   {
     id: 4,
     image: service04,
-    title: "Interior and Exterior Decorations",
+    title: "Interior and Exterior Designs",
     description:
       "Designing and implementing interior and exterior decorations, including flooring, ceilings, and walls with high-quality materials.",
   },
