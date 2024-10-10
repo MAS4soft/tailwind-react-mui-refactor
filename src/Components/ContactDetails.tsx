@@ -1,16 +1,17 @@
 import { Typography, Container, Box, Link } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import PhoneIcon from "@mui/icons-material/Phone"; // Import Phone icon
-import EmailIcon from "@mui/icons-material/Email"; // Import Email icon
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
 
 interface ContactDetailsProps {
   name: string;
   address: string;
-  phone: string;
+  phone?: string;   // phone is optional
+  whatsapp?: string; // whatsapp is optional
   email: string;
 }
 
-const ContactDetails = ({ name, address, phone, email }: ContactDetailsProps) => {
+const ContactDetails = ({ name, address, phone = "", whatsapp = "", email }: ContactDetailsProps) => {
   return (
     <Container>
       <Box my={4}>
@@ -28,28 +29,32 @@ const ContactDetails = ({ name, address, phone, email }: ContactDetailsProps) =>
         <br />
         
         {/* WhatsApp Section */}
-        <Typography variant="body1" gutterBottom>
-          <strong>WhatsApp:</strong> <br />
-          <Link
-            href={`https://wa.me/${phone.replace(/\s|\(|\)|-/g, "")}`} // WhatsApp link
-            target="_blank"
-            sx={{ display: "flex", alignItems: "center", color: "inherit" }}
-          >
-            <WhatsAppIcon sx={{ mr: 1, color: "green" }} /> {phone}
-          </Link>
-        </Typography>
+        {whatsapp && (
+          <Typography variant="body1" gutterBottom>
+            <strong>WhatsApp:</strong> <br />
+            <Link
+              href={`https://wa.me/${whatsapp.replace(/\s|\(|\)|-/g, "")}`} // WhatsApp link
+              target="_blank"
+              sx={{ display: "flex", alignItems: "center", color: "inherit" }}
+            >
+              <WhatsAppIcon sx={{ mr: 1, color: "green" }} /> {whatsapp}
+            </Link>
+          </Typography>
+        )}
         <br />
         
         {/* Phone Section with Phone Icon */}
-        <Typography variant="body1" gutterBottom>
-          <strong>Phone:</strong> <br />
-          <Link
-            href={`tel:${phone.replace(/\s|\(|\)|-/g, "")}`} // Phone link for calling
-            sx={{ display: "flex", alignItems: "center", color: "inherit" }}
-          >
-            <PhoneIcon sx={{ mr: 1 }} /> {phone}
-          </Link>
-        </Typography>
+        {phone && (
+          <Typography variant="body1" gutterBottom>
+            <strong>Phone:</strong> <br />
+            <Link
+              href={`tel:${phone.replace(/\s|\(|\)|-/g, "")}`} // Phone link for calling
+              sx={{ display: "flex", alignItems: "center", color: "inherit" }}
+            >
+              <PhoneIcon sx={{ mr: 1 }} /> {phone}
+            </Link>
+          </Typography>
+        )}
         <br />
 
         {/* Email Section with Email Icon */}

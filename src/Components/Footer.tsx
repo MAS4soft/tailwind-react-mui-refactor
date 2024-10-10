@@ -1,5 +1,4 @@
-// src/Components/Footer.tsx
-import { Box, Typography, Grid, Container, Divider } from "@mui/material";
+import { Box, Typography, Grid, Container, Divider, Link } from "@mui/material"; // تأكد من استيراد Link
 import SocialMediaIcons from "./SocialMediaIcons"; // استيراد المكون الجديد
 
 const Footer = () => {
@@ -64,19 +63,35 @@ const Footer = () => {
             <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
               Headquarters Office
             </Typography>
-            <Typography variant="body2">
-              4 Mountain View Rd, Bloemhof,
+            <Link
+              href="https://maps.app.goo.gl/KdTyRQkLk3zUW8Jp8"
+              color="inherit"
+              target="_blank"
+            >
+              4 Mountain View Rd, Bloemhof,Tiger Valley,
               <br />
-              Tiger Valley, Cape Town 7530
+              Cape Town 7530
               <br />
               South Africa
+            </Link>
+            <br />
+            <br />
+            <Typography variant="body2">
+              <Link href="tel:+27210135294" color="inherit">
+                (+27) 21-013-5294
+              </Link>
+            </Typography>
+            <Typography variant="body2">
+              <Link href="https://wa.me/27660041063" color="inherit">
+                (+27) 66-004-1063
+              </Link>
             </Typography>
             <br />
-            <Typography variant="body2">(+27) 826-826-165</Typography>
-            <Typography variant="body2">(+27) 660-041-063</Typography>
-            <br />
-            <Typography variant="body2">info@Armadia.co.za</Typography>
-            {/* <Typography variant="body2">contact@Armadia.com</Typography> */}
+            <Typography variant="body2">
+              <Link href="mailto:info@Armadia.co.za" color="inherit">
+                info@Armadia.co.za
+              </Link>
+            </Typography>
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>

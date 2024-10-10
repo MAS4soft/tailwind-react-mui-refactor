@@ -16,7 +16,6 @@ const ContactContent = () => {
         justifyContent="center"
         textAlign="center"
         mb={4}
-        // pt={8}
       >
         <TitleDetails 
           title="Our Branches"  

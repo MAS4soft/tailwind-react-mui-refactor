@@ -8,6 +8,7 @@ interface Contact {
   name: string;
   mapSrc: string;
   address: string;
+  whatsapp: string;
   phone: string;
   email: string;
 }
@@ -31,6 +32,7 @@ const ContactSection = ({ contacts }: ContactSectionProps) => {
             <ContactDetails
               name={contact.name}
               address={contact.address}
+              whatsapp={contact.whatsapp}
               phone={contact.phone}
               email={contact.email}
             />
