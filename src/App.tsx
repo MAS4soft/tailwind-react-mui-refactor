@@ -6,6 +6,7 @@ import Services from "./Pages/Services/Index";
 import Projects from "./Pages/Projects/Index";
 import About from "./Pages/About/Index";
 import ContactUs from "./Pages/ContactUs/Index";
+import LandingPage from "./Pages/landingpage/Index";
 import ResponsiveAppBar from "./Components/ResponsiveAppBar";
 import ScrollToTop from "./Components/ScrollToTop";
 import './index.css'
@@ -23,6 +24,8 @@ const App = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/Promotion" element={<LandingPage />} />
+
       </Routes>
   </>
   );

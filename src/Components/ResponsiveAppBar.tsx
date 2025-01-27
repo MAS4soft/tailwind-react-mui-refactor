@@ -1,13 +1,15 @@
+import React, { useState } from "react";
+import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Typography, useTheme, Toolbar } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useLocation } from "react-router-dom";
+import { styled } from "@mui/system";
+import logo from "../assets/logo.png";
 import SocialMediaIcons from "./SocialMediaIcons";
-import { useState } from "react";
-import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, styled, Toolbar, Typography, useTheme } from "@mui/material";
-import { Menu as MenuIcon } from "@mui/icons-material";
-import logo from "../assets/logo.png"
+import { Theme } from "@mui/material/styles";
 
 const pages = ["Home", "Services", "Projects", "About", "Contact Us"];
 
-const Logo = styled("img")(({ theme }) => ({
+const Logo = styled("img")(({ theme }: { theme: Theme }) => ({
   height: 40,
   display: "block",
   transition: "color 0.3s",
@@ -15,7 +17,7 @@ const Logo = styled("img")(({ theme }) => ({
     height: 30,
   },
   "&:hover": {
-    color: theme.palette.warning.main, // Apply hover color
+    color: theme.palette.warning.main,
   },
 }));
 
@@ -28,7 +30,7 @@ const LogoTitle: React.FC<LogoTitleProps> = ({ src, alt }) => {
   const theme = useTheme();
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
-      <Logo src={src} alt={alt} sx={{ mr: .5 }} />
+      <Logo src={src} alt={alt} sx={{ mr: 0.5 }} theme={theme} />
       <Typography
         variant="h6"
         noWrap
@@ -41,7 +43,7 @@ const LogoTitle: React.FC<LogoTitleProps> = ({ src, alt }) => {
           color: theme.palette.common.white,
           textDecoration: "none",
           "&:hover": {
-            color: theme.palette.primary.main, 
+            color: theme.palette.primary.main,
           },
         }}
       >
@@ -178,6 +180,31 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
 
+          {/* Promotion Button (Mobile view, next to the menu) */}
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
+              ml: 2, // To position the button next to the menu icon
+            }}
+          >
+            <Button
+              key="Promotion"
+              sx={{
+                my: 1,
+                color: theme.palette.common.white,
+                backgroundColor: "red", // اللون الأحمر
+                "&:hover": {
+                  backgroundColor: "darkred", // اللون الأحمر الداكن عند المرور عليه
+                },
+              }}
+              component={Link}
+              to="/promotion"
+            >
+              Promotion
+            </Button>
+          </Box>
+
           {/* Desktop Buttons */}
           <Box
             sx={{
@@ -188,6 +215,26 @@ function ResponsiveAppBar() {
             }}
           >
             {renderButtons()}
+            {/* Promotion Button */}
+            <Button
+              key="Promotion"
+              sx={{
+                my: 1,
+                color:
+                  currentPath === "/promotion"
+                    ? theme.palette.primary.main
+                    : theme.palette.common.white,
+                display: "block",
+                backgroundColor: "red", // اللون الأحمر
+                "&:hover": {
+                  backgroundColor: "darkred", // اللون الأحمر الداكن عند المرور عليه
+                },
+              }}
+              component={Link}
+              to="/promotion"
+            >
+              Promotion
+            </Button>
           </Box>
 
           {/* Social Media Icons */}
